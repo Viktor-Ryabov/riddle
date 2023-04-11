@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.22fcceda.css",
-    "main.js": "/static/js/main.1008dc95.js",
-    "static/js/787.7ed4f30b.chunk.js": "/static/js/787.7ed4f30b.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.22fcceda.css.map": "/static/css/main.22fcceda.css.map",
-    "main.1008dc95.js.map": "/static/js/main.1008dc95.js.map",
-    "787.7ed4f30b.chunk.js.map": "/static/js/787.7ed4f30b.chunk.js.map"
+    "main.css": "/riddle/static/css/main.22fcceda.css",
+    "main.js": "/riddle/static/js/main.0e30fb61.js",
+    "static/js/787.7ed4f30b.chunk.js": "/riddle/static/js/787.7ed4f30b.chunk.js",
+    "static/media/logo.svg": "/riddle/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/riddle/index.html",
+    "main.22fcceda.css.map": "/riddle/static/css/main.22fcceda.css.map",
+    "main.0e30fb61.js.map": "/riddle/static/js/main.0e30fb61.js.map",
+    "787.7ed4f30b.chunk.js.map": "/riddle/static/js/787.7ed4f30b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.22fcceda.css",
-    "static/js/main.1008dc95.js"
+    "static/js/main.0e30fb61.js"
   ]
 }
