@@ -3,12 +3,10 @@ import './App.css';
 
 function App() {
   const answerFunc = () => {
-    let answer = prompt("Знаете ответ?", "answer");
-    let go = window.confirm("Верно! ПОХОД. Это Начало Вашего знакомства с Крымом!");
-    if(answer.toLocaleLowerCase() === "поход"){
-      if (go){
-        window.location.href = 'https://rya-travel.ru';
-      }
+    let answer = prompt("Знаете ответ?", "ответ");
+    if(answer === "поход"){
+      alert("Верно! Это Начало Вашего знакомства с Крымом!");
+      window.location.href = 'https://rya-travel.ru';
     } else {
       alert ("подумай еще 🚫")
     }
