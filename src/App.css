@@ -15,7 +15,8 @@
 
 .App-key {
     position: absolute;
-    top: 40%
+    top: 40%;
+    font-size: 45px;
 }
 
 .App-header {

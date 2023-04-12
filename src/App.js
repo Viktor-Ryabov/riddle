@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const answerFunc = () => {
     let answer = prompt("Знаете ответ?", "ответ");
-    if(answer === "поход"){
+    if(answer.toLocaleLowerCase() === "рябов"){
       alert("Верно! Это Начало Вашего знакомства с Крымом!");
       window.location.href = 'https://rya-travel.ru';
     } else {
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="App-key">срчрё</div>
+        <div className="App-key">оэяма</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Аве, Цезарь!
