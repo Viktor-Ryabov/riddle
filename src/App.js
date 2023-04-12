@@ -5,10 +5,12 @@ function App() {
   const answerFunc = () => {
     let answer = prompt("Знаете ответ?", "answer");
     let go = window.confirm("Верно! ПОХОД. Это Начало Вашего знакомства с Крымом!");
-    if(answer.toLocaleLowerCase() == "поход"){
+    if(answer.toLocaleLowerCase() === "поход"){
       if (go){
         window.location.href = 'https://rya-travel.ru';
       }
+    } else {
+      alert ("подумай еще 🚫")
     }
   }
   
