@@ -4,10 +4,8 @@ import './App.css';
 function App() {
   const answerFunc = () => {
     let answer = prompt("Знаете ответ?", "answer");
-    let go = window.confirm("Поехали?");
-    if(answer == "проверка"){
-      alert ("Правильно, сначала нужно протестировать, а потом давать людям!");
-      alert ("Вот теперь начинается настоящий  квест");
+    let go = window.confirm("Верно! ПОХОД. Это Начало Вашего знакомства с Крымом!");
+    if(answer.toLocaleLowerCase() == "поход"){
       if (go){
         window.location.href = 'https://rya-travel.ru';
       }
@@ -18,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div className="App-key">234123fd3fcwerv</div>
+        <div className="App-key">срчрё</div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Аве, Цезарь!
