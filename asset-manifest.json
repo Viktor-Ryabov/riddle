@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/riddle/static/css/main.c3557c95.css",
+    "main.css": "/riddle/static/css/main.93973626.css",
     "main.js": "/riddle/static/js/main.1e76c8cb.js",
     "static/js/787.7ed4f30b.chunk.js": "/riddle/static/js/787.7ed4f30b.chunk.js",
     "static/media/wollenWirBrannenSVG.svg": "/riddle/static/media/wollenWirBrannenSVG.5584994f87c120d00cf9.svg",
     "index.html": "/riddle/index.html",
-    "main.c3557c95.css.map": "/riddle/static/css/main.c3557c95.css.map",
+    "main.93973626.css.map": "/riddle/static/css/main.93973626.css.map",
     "main.1e76c8cb.js.map": "/riddle/static/js/main.1e76c8cb.js.map",
     "787.7ed4f30b.chunk.js.map": "/riddle/static/js/787.7ed4f30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3557c95.css",
+    "static/css/main.93973626.css",
     "static/js/main.1e76c8cb.js"
   ]
 }
