@@ -3,8 +3,8 @@ import "./Riddle1.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const Riddle1 = (props) => {
-    const answer = useSelector(state => state.answer);
-    const countAnswers = useSelector(state => state.countAnswers);
+    const answer = useSelector((state) => state.answer);
+    const countAnswers = useSelector((state) => state.countAnswers);
 
     const answerFunc = () => {
         props.setQuestonModalActive(true);
@@ -12,7 +12,6 @@ const Riddle1 = (props) => {
     return (
         <>
             <section className="Riddle1-header">
-                
                 <div className="Riddle1-key">оэяма</div>
                 <p>Аве, Цезарь!</p>
                 <a
@@ -23,9 +22,13 @@ const Riddle1 = (props) => {
                 >
                     :->
                 </a>
-                <p className="Riddle1-info">Ваш предыдущий ответ: {answer}</p>
-                <p className="Riddle1-info">Колияество неправильных ответов: {countAnswers}</p>
             </section>
+            <div className="Riddle1-info-block">
+                <p className="Riddle1-info">Ваш предыдущий ответ: {answer}</p>
+                <p className="Riddle1-info">
+                    Колияество неправильных ответов: {countAnswers}
+                </p>
+            </div>
         </>
     );
 };

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/riddle/static/css/main.a4bf3075.css",
-    "main.js": "/riddle/static/js/main.cf53c3ed.js",
+    "main.css": "/riddle/static/css/main.93973626.css",
+    "main.js": "/riddle/static/js/main.1e76c8cb.js",
     "static/js/787.7ed4f30b.chunk.js": "/riddle/static/js/787.7ed4f30b.chunk.js",
-    "static/media/logo.svg": "/riddle/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/wollenWirBrannenSVG.svg": "/riddle/static/media/wollenWirBrannenSVG.5584994f87c120d00cf9.svg",
     "index.html": "/riddle/index.html",
-    "main.a4bf3075.css.map": "/riddle/static/css/main.a4bf3075.css.map",
-    "main.cf53c3ed.js.map": "/riddle/static/js/main.cf53c3ed.js.map",
+    "main.93973626.css.map": "/riddle/static/css/main.93973626.css.map",
+    "main.1e76c8cb.js.map": "/riddle/static/js/main.1e76c8cb.js.map",
     "787.7ed4f30b.chunk.js.map": "/riddle/static/js/787.7ed4f30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4bf3075.css",
-    "static/js/main.cf53c3ed.js"
+    "static/css/main.93973626.css",
+    "static/js/main.1e76c8cb.js"
   ]
 }
