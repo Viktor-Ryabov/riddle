@@ -1,6 +1,5 @@
 .Riddle1-key {
-    position: absolute;
-    top: 40%;
+
     font-size: 45px;
 }
 
@@ -21,6 +20,10 @@
 }
 .Riddle1-link:hover{
   cursor: pointer;
+}
+
+.Riddle1-info{
+    font-size: 10px;
 }
 
 @keyframes Riddle1-logo-spin {

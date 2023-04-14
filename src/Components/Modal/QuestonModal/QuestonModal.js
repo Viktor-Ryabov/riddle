@@ -32,7 +32,7 @@ const QuestonModal = ({ ...props }) => {
                 </div>
 
                 <div className={Styles.discription}>
-                    <CaptureForm />
+                    <CaptureForm { ...props }/>
                 </div>
             </div>
             <ModalOwerlay />
