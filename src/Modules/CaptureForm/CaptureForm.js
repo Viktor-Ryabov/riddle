@@ -2,22 +2,24 @@ import React from "react";
 import Styles from "./CaptureForm.module.css";
 
 const CaptureForm = () => {
+    const getInputData = () => {
+        const riddleAnswer = document.querySelector("#riddleAnswer");
+        console.log(riddleAnswer.value)
+    }
+
     return (
         <div className={Styles.container}>
            <div className={Styles.inputs}>
-            <div className={Styles.brand_title}>Введите скорее всего неправильный Ваш ответ</div>
+            <div className={Styles.brand_title}>Введите Ваш ответ</div>
+
                 <input
+                id="riddleAnswer"
                     className={Styles.input}
-                    type="email"
-                    placeholder="Почта"
+                    type="text"
+                    placeholder="Cкорее всего неправильный Ваш ответ"
                 />
-                <input
-                    className={Styles.input}
-                    type="password"
-                    placeholder="Имя"
-                />
-                <button className={Styles.button} type="submit">
-                    LOGIN
+                <button className={Styles.button} type="send" onClick={() => getInputData()}>
+                    ГОТОВО! скорее всего правильный
                 </button>
             </div>
         </div>

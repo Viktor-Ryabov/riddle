@@ -2,13 +2,13 @@ import { ModalOwerlay } from "../ModalOwerlay/ModalOwerlay.js";
 import { useCallback, useEffect } from "react";
 import CloseIcon from "../../../UI/CloseIcon/CloseIcon.js";
 import ReactDOM from "react-dom";
-import Styles from "./Modal.module.css";
+import Styles from "./QuestonModal.module.css";
 import CaptureForm from "../../../Modules/CaptureForm/CaptureForm.js";
 
-const Modal = ({ ...props }) => {
+const QuestonModal = ({ ...props }) => {
     const escFunction = useCallback((event) => {
         if (event.key === "Escape") {
-            props.setModalDisabled();
+            props.setQuestonModalDisabled();
         }
     }, []);
 
@@ -30,11 +30,7 @@ const Modal = ({ ...props }) => {
                 <div className={Styles.closeIcon}>
                     <CloseIcon {...props} />
                 </div>
-                {/* <img
-                    src={props.cardDataFormodal.image}
-                    className={Styles.image}
-                    alt={props.cardDataFormodal.name}
-                /> */}
+
                 <div className={Styles.discription}>
                     <CaptureForm />
                 </div>
@@ -45,4 +41,4 @@ const Modal = ({ ...props }) => {
     );
 };
 
-export default Modal;
+export default QuestonModal;

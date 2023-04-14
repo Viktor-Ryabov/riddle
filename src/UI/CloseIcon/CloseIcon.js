@@ -3,7 +3,7 @@ import Icon from "./image/bonfire_fire_icon_250693.png";
 
 const CloseIcon = (props) => {
     return (
-        <div className={Styles.closeIcon} onClick={props.setModalDisabled}>
+        <div className={Styles.closeIcon} onClick={props.setQuestonModalDisabled}>
             <img src={Icon} className={Styles.closeIcon} alt="закрыть" />
         </div>
     );
