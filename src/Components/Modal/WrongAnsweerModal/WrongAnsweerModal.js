@@ -4,11 +4,14 @@ import CloseIcon from "../../../UI/CloseIcon/CloseIcon.js";
 import ReactDOM from "react-dom";
 import Styles from "./WrongAnsweerModal.module.css";
 import CaptureForm from "../../../Modules/CaptureForm/CaptureForm.js";
+import { useDispatch } from "react-redux";
 
 const WrongAnsweerModal = ({ ...props }) => {
+    const dispatch = useDispatch();
+
     const escFunction = useCallback((event) => {
         if (event.key === "Escape") {
-            props.setModalDisabled();
+            dispatch({type: "WRONG_ANSWER_DISABLED"});
         }
     }, []);
 
@@ -28,11 +31,25 @@ const WrongAnsweerModal = ({ ...props }) => {
         >
             <div className={Styles.modalContainer}>
                 <div className={Styles.closeIcon}>
-                    <CloseIcon {...props} />
+                    <CloseIcon />
                 </div>
 
                 <div className={Styles.discription}>
-                    <CaptureForm />
+                    <div className={Styles.container}>
+                        <div className={Styles.inputs}>
+                            <div className={Styles.brand_title}>
+                                Ваш ответ не верный
+                            </div>
+
+                            <button
+                                className={Styles.button}
+                                type="send"
+                                onClick={dispatch({type: "WRONG_ANSWER_DISABLED"})}
+                            >
+                                ок, подумаю еще
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <ModalOwerlay />

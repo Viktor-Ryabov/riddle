@@ -19,7 +19,6 @@ const CaptureForm = (props) => {
     const getInputData = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
         dispatch({ type: "GOT_ANSWER", payload: newAnswer });
-        props.setQuestonModalDisabled();
         checkInputAnswer();
     };
 
@@ -27,6 +26,7 @@ const CaptureForm = (props) => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
         if (newAnswer != "рябов") {
             dispatch({ type: "IS_ANSWER_WRON", payload: 1 });
+            dispatch({ type: "WRONG_ANSWER_ACTIVE" });
         }
     };
 
