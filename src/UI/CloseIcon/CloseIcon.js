@@ -9,7 +9,7 @@ const CloseIcon = () => {
     }
     return (
         <div className={Styles.closeIcon} onClick={closePopup}>
-            <img src={Icon} className={Styles.closeIcon} alt="закрыть" />
+            {/* <img src={Icon} className={Styles.closeIcon} alt="закрыть" /> */}☠️
         </div>
     );
 };

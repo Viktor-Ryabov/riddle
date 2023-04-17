@@ -4,6 +4,17 @@
     width: 42px;
     height: 42px;
     align-self: flex-end;
+    /* background-color: #1da1f2; */
+        border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-weight: 600;
 }
 
 .closeIcon:hover {
