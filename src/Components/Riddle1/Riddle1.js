@@ -6,6 +6,7 @@ import { withModal } from "../../hoc/withModal";
 import { useDispatch, useSelector } from "react-redux";
 import InfoBlock from "../../Modules/InfoBlock/InfoBlock";
 import WrongAnsweerModal from "../Modal/WrongAnsweerModal/WrongAnsweerModal";
+import RightAnsweerModal from "../Modal/RightAnsweerModal/RightAnsweerModal";
 
 const WithModalQuestion = withModal(CaptureForm);
 
@@ -17,6 +18,7 @@ const Riddle1 = () => {
         <>
             <WithModalQuestion active={state.questionNotiseActive} />
             <WrongAnsweerModal active={state.wronAnswerNoticeActive} />
+            <RightAnsweerModal active={state.rightAnswerNotiseActive} />
             <section className="Riddle1-header">
                 <div className="Riddle1-key">оэяма</div>
                 <p>Аве, Цезарь!</p>

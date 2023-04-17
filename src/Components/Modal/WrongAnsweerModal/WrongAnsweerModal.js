@@ -41,13 +41,13 @@ const WrongAnsweerModal = ({ ...props }) => {
                                 Ваш ответ не верный
                             </div>
 
-                            <button
+                            {/* <button
                                 className={Styles.button}
-                                type="send"
-                                // onClick={dispatch({type: "WRONG_ANSWER_DISABLED"})}
+                                // type="click"
+                                // onClick={closePopup}
                             >
                                 ок, подумаю еще
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>

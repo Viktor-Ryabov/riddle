@@ -2,11 +2,11 @@ import { ModalOwerlay } from "../ModalOwerlay/ModalOwerlay.js";
 import { useCallback, useEffect } from "react";
 import CloseIcon from "../../../UI/CloseIcon/CloseIcon.js";
 import ReactDOM from "react-dom";
-import Styles from "./WrongAnsweerModal.module.css";
+import Styles from "./RightAnsweerModal.module.css";
 import CaptureForm from "../../../Modules/CaptureForm/CaptureForm.js";
 import { useDispatch } from "react-redux";
 
-const WrongAnsweerModal = ({ ...props }) => {
+const RightAnsweerModal = ({ ...props }) => {
     const dispatch = useDispatch();
 
     const escFunction = useCallback((event) => {
@@ -38,16 +38,10 @@ const WrongAnsweerModal = ({ ...props }) => {
                     <div className={Styles.container}>
                         <div className={Styles.inputs}>
                             <div className={Styles.brand_title}>
-                                Ваш ответ не верный
+                                Ваш ответ верный
                             </div>
 
-                            <button
-                                className={Styles.button}
-                                type="send"
-                                onClick={dispatch({type: "WRONG_ANSWER_DISABLED"})}
-                            >
-                                ок, подумаю еще
-                            </button>
+
                         </div>
                     </div>
                 </div>
@@ -58,4 +52,4 @@ const WrongAnsweerModal = ({ ...props }) => {
     );
 };
 
-export default WrongAnsweerModal;
+export default RightAnsweerModal;
