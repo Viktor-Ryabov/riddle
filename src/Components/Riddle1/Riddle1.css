@@ -22,21 +22,6 @@
   cursor: pointer;
 }
 
-.Riddle1-info-block{
-    height: 10vh;
-    background-color: #282c34;
-}
-.Riddle1-info{
-    margin: 0 5%;
-    font-size: calc(8px + 2vmin);
-    color: white;
-    width: 90%;
-    text-align: left;
-}
-
-.Riddle1-info:last-child{
-    margin-top: 0;
-}
 
 @keyframes Riddle1-logo-spin {
     from {

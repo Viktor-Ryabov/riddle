@@ -1,0 +1,22 @@
+.info_block{
+    padding: 5px;
+    height: calc(10vh - 4px);
+    background-color: #282c34;
+    outline: solid 2px #61dafb;
+}
+.info{
+    margin: 0 5%;
+    font-size: calc(8px + 2vmin);
+    color: white;
+    width: 90%;
+    text-align: left;
+}
+
+.info_answer{
+    color:  #61dafb;
+    margin: 0;
+}
+
+.info:last-child{
+    margin-top: 0;
+}
