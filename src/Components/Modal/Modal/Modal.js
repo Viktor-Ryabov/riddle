@@ -8,25 +8,25 @@ import CaptureForm from "../../../Modules/CaptureForm/CaptureForm.js";
 const Modal = ({ ...props }) => {
 
    
-    const escFunction = useCallback((event) => {
-        if (event.key === "Escape") {
-            props.setModalDisabled();
-        }
-    }, []);
+    // const escFunction = useCallback((event) => {
+    //     if (event.key === "Escape") {
+    //         props.setModalDisabled();
+    //     }
+    // }, []);
 
-    useEffect(() => {
-        document.addEventListener("keydown", escFunction, false);
-        return () => {
-            document.removeEventListener("keydown", escFunction, false);
-        };
-    }, []);
+    // useEffect(() => {
+    //     document.addEventListener("keydown", escFunction, false);
+    //     return () => {
+    //         document.removeEventListener("keydown", escFunction, false);
+    //     };
+    // }, []);
 
     return ReactDOM.createPortal(
         <section
             className={`${props.active ? Styles.modal_active : ""} ${
                 Styles.modal
             } p-10`}
-            onClick={escFunction}
+            // onClick={escFunction}
         >
             <div className={Styles.modalContainer}>
                 <div className={Styles.closeIcon}>

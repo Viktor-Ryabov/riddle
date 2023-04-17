@@ -9,25 +9,25 @@ import { useDispatch } from "react-redux";
 const WrongAnsweerModal = ({ ...props }) => {
     const dispatch = useDispatch();
 
-    // const escFunction = useCallback((event) => {
-    //     if (event.key === "Escape") {
-    //         dispatch({type: "WRONG_ANSWER_DISABLED"});
-    //     }
-    // }, []);
+    const escFunction = useCallback((event) => {
+        if (event.key === "Escape") {
+            dispatch({type: "WRONG_ANSWER_DISABLED"});
+        }
+    }, []);
 
-    // useEffect(() => {
-    //     document.addEventListener("keydown", escFunction, false);
-    //     return () => {
-    //         document.removeEventListener("keydown", escFunction, false);
-    //     };
-    // }, []);
+    useEffect(() => {
+        document.addEventListener("keydown", escFunction, false);
+        return () => {
+            document.removeEventListener("keydown", escFunction, false);
+        };
+    }, []);
 
     return ReactDOM.createPortal(
         <section
             className={`${props.active ? Styles.modal_active : ""} ${
                 Styles.modal
             } p-10`}
-            // onClick={escFunction}
+            onClick={escFunction}
         >
             <div className={Styles.modalContainer}>
                 <div className={Styles.closeIcon}>
@@ -44,7 +44,7 @@ const WrongAnsweerModal = ({ ...props }) => {
                             <button
                                 className={Styles.button}
                                 type="send"
-                                // onClick={dispatch({type: "WRONG_ANSWER_DISABLED"})}
+                                onClick={dispatch({type: "WRONG_ANSWER_DISABLED"})}
                             >
                                 ок, подумаю еще
                             </button>

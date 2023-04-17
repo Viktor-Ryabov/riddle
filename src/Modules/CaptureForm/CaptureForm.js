@@ -27,6 +27,8 @@ const CaptureForm = (props) => {
         if (newAnswer != "рябов") {
             dispatch({ type: "IS_ANSWER_WRON", payload: 1 });
             dispatch({ type: "WRONG_ANSWER_ACTIVE" });
+        } else {
+            // dispatch({ type: "RIGHT_ANSWER_ACTIVE" });
         }
     };
 
