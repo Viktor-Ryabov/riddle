@@ -5,6 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 const CaptureForm = (props) => {
     const dispatch = useDispatch();
     const answer = useSelector((state) => state.answer);
+    const wronAnswerNoticeActive = useSelector(
+        (state) => state.wronAnswerNoticeActive
+    );
+    const rightAnswerNotiseActive = useSelector(
+        (state) => state.rightAnswerNotiseActive
+    );
+    const questionNotiseActive = useSelector(
+        (state) => state.questionNotiseActive
+    );
     console.log(answer);
 
     const getInputData = () => {
@@ -17,7 +26,7 @@ const CaptureForm = (props) => {
     const checkInputAnswer = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
         if (newAnswer != "рябов") {
-            dispatch({ type: "IS_ANSWER_WRON", payload: 1});
+            dispatch({ type: "IS_ANSWER_WRON", payload: 1 });
         }
     };
 
