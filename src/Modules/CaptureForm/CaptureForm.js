@@ -1,20 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Styles from "./CaptureForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const CaptureForm = () => {
     const dispatch = useDispatch();
     const answer = useSelector((state) => state.answer);
-    // const wronAnswerNoticeActive = useSelector(
-    //     (state) => state.wronAnswerNoticeActive
-    // );
-    // const rightAnswerNotiseActive = useSelector(
-    //     (state) => state.rightAnswerNotiseActive
-    // );
-    // const questionNotiseActive = useSelector(
-    //     (state) => state.questionNotiseActive
-    // );
-    // console.log(answer);
 
     const getInputData = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
@@ -32,7 +23,7 @@ const CaptureForm = () => {
             dispatch({ type: "RIGHT_ANSWER_ACTIVE" });
             // alert("Верно!");
             setTimeout(function () {
-                window.location.href = "https://rya-travel.ru";
+                window.location.href = <Link to="/second" />;
             }, 2 * 1000);
         }
     };
