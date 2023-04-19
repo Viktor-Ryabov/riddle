@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Styles from "./CaptureForm.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { rightAnswers } from "../../constants/rigthAnwers";
 
 const CaptureForm = () => {
     const dispatch = useDispatch();
+    const currentQuestion = useSelector((state) => state.rightAnswerCount)
 
     const getInputData = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
@@ -19,11 +20,8 @@ const CaptureForm = () => {
             dispatch({ type: "WRONG_ANSWER_ACTIVE" });
         } else {
             dispatch({ type: "QUESTION_NOTICE_DISABLED" });
+            dispatch({ type: "RIGHT_ANSWER", plusOne: 1 });
             dispatch({ type: "RIGHT_ANSWER_ACTIVE" });
-            // alert("Верно!");
-            setTimeout(function () {
-                window.location.href = <Link to="/second" />;
-            }, 2 * 1000);
         }
     };
 

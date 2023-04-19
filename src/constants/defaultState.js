@@ -5,5 +5,5 @@ export const defaultState = {
     modal: false,    
     countAnswers: 0,
     answer: "...",
-
+    rightAnswerCount: 1,
 };

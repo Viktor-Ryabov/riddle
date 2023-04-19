@@ -10,6 +10,8 @@ export const answerReducer = (state = defaultState, action) => {
                 countAnswers: state.countAnswers + action.payload,
                 wronAnswerNoticeActive: true,
             };
+            case "RIGHT_ANSWER":
+                return { ...state, rightAnswer: state.rightAnswer + action.plusOne };
         case "QUESTION_NOTICE_ACTIVE":
             return { ...state, questionNotiseActive: true};
         case "WRONG_ANSWER_ACTIVE":

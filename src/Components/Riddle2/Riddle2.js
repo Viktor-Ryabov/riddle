@@ -1,10 +1,10 @@
 import "./Riddle2.css";
-import CaptureForm from "../../Modules/CaptureForm/CaptureForm";
-import { withModal } from "../../hoc/withModal";
+import CaptureForm from "../../Modules/CaptureForm/CaptureForm.js";
+import { withModal } from "../../hoc/withModal.js";
 import { useDispatch, useSelector } from "react-redux";
-import InfoBlock from "../../Modules/InfoBlock/InfoBlock";
-import WrongAnswer from "../../Modules/WrongAnswer/WrongAnswer";
-import RightAnswer from "../../Modules/RightAnswer/RightAnswer";
+import InfoBlock from "../../Modules/InfoBlock/InfoBlock.js";
+import WrongAnswer from "../../Modules/WrongAnswer/WrongAnswer.js";
+import RightAnswer from "../../Modules/RightAnswer/RightAnswer.js";
 
 
 const WithModalQuestion = withModal(CaptureForm);
