@@ -1,21 +1,56 @@
 import React from "react";
 import Styles from "./CaptureForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { rightAnswers } from "../../constants/rigthAnwers";
+import { rightAnswersObject } from "../../constants/rightAnswersObject";
 
 const CaptureForm = () => {
     const dispatch = useDispatch();
-    const currentQuestion = useSelector((state) => state.rightAnswerCount)
+    const numberOfCurrentQuestion = useSelector(
+        (state) => state.numberOfCurrentQuestion
+    );
+    let rightAnswer = 1;
+
+    const whatIsRightAnswer = (number) => {
+        if (number == 1){
+            rightAnswer = rightAnswersObject.first;;
+        } else if (number == 2) {
+            rightAnswer = rightAnswersObject.second
+        } else if (number == 3) {
+            rightAnswer = rightAnswersObject.third;
+        } else if (number == 4) {
+            rightAnswer = rightAnswersObject.fourth;
+        } else if (number == 5) {
+            rightAnswer = rightAnswersObject.fifth;
+        }
+        // switch (number) {
+        //     case 1:
+        //         rightAnswer = rightAnswersObject.first;
+        //     case 2:
+        //         rightAnswer = rightAnswersObject.second;
+        //     case 3:
+        //         rightAnswer = rightAnswersObject.third;
+        //     case 4:
+        //         rightAnswer = rightAnswersObject.fourth;
+        //     case 5:
+        //         rightAnswer = rightAnswersObject.fifth;
+        //     default:
+        //         rightAnswer = "";
+        // }
+        console.log(`rightAnswer is: ${rightAnswer}`);
+    };
 
     const getInputData = () => {
+        
         const newAnswer = document.querySelector("#riddleAnswer").value;
         dispatch({ type: "GOT_ANSWER", payload: newAnswer });
-        checkInputAnswer();
     };
 
     const checkInputAnswer = () => {
+        whatIsRightAnswer(numberOfCurrentQuestion);
         const newAnswer = document.querySelector("#riddleAnswer").value;
-        if (newAnswer !== "рябов") {
+
+        getInputData();
+        if (newAnswer !== rightAnswer) {
             dispatch({ type: "IS_ANSWER_WRON", payload: 1 });
             dispatch({ type: "WRONG_ANSWER_ACTIVE" });
         } else {
@@ -39,7 +74,7 @@ const CaptureForm = () => {
                 <button
                     className={Styles.button}
                     type="send"
-                    onClick={() => getInputData()}
+                    onClick={() => checkInputAnswer()}
                 >
                     ГОТОВО! скорее всего правильный
                 </button>

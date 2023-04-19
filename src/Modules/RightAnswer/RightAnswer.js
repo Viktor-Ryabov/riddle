@@ -7,8 +7,8 @@ const RightAnswer = () => {
 
     const dispatch = useDispatch();
 
-    const numrebQuestionPage = useSelector((state) => state.rightAnswerCount);
-    console.log(numrebQuestionPage);
+    const numrebQuestionPage = useSelector((state) => state.numberOfCurrentQuestion);
+    // console.log(numrebQuestionPage);
 
     const questionPage = (number) => {
         switch (number) {
@@ -29,7 +29,7 @@ const RightAnswer = () => {
         dispatch({ type: "RIGHT_ANSWER_DISABLED" });
     }
 
-    console.log(questionPage(numrebQuestionPage))
+    // console.log(questionPage(numrebQuestionPage))
 
     return (
         <div className={Styles.container}>
