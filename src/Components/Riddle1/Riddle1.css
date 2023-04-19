@@ -1,8 +1,3 @@
-.Riddle1-key {
-
-    font-size: 45px;
-}
-
 .Riddle1-header {
     background-color: #282c34;
     min-height: 90vh;
@@ -14,20 +9,3 @@
     color: white;
 }
 
-.Riddle1-link {
-    color: #61dafb;
-    text-decoration: none;
-}
-.Riddle1-link:hover{
-  cursor: pointer;
-}
-
-
-@keyframes Riddle1-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}

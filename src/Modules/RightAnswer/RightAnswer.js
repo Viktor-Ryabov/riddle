@@ -1,22 +1,22 @@
 import React from "react";
-import Styles from "./WrongAnswer.module.css";
+import Styles from "./RightAnswer.module.css";
 
-const WrongAnswer = () => {
+const RightAnswer = () => {
 
     return (
         <div className={Styles.container}>
             <div className={Styles.inputs}>
-                <div className={Styles.brand_title}>Ваш ответ не правильный</div>
+                <div className={Styles.brand_title}>Верно!</div>
 
                 <button
                     className={Styles.button}
                     type="send"
                 >
-                    ок, подумаю ещё
+                    давай дальше!
                 </button>
             </div>
         </div>
     );
 };
 
-export default WrongAnswer;
+export default RightAnswer;

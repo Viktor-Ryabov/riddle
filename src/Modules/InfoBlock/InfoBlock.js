@@ -1,6 +1,6 @@
 import React from "react";
 import Styles from "./InfoBlock.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const InfoBlock = () => {
   const answer = useSelector((state) => state.answer);

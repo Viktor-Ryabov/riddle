@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Styles from "./CaptureForm.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const CaptureForm = () => {
     const dispatch = useDispatch();
-    const answer = useSelector((state) => state.answer);
 
     const getInputData = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
@@ -15,7 +14,7 @@ const CaptureForm = () => {
 
     const checkInputAnswer = () => {
         const newAnswer = document.querySelector("#riddleAnswer").value;
-        if (newAnswer != "рябов") {
+        if (newAnswer !== "рябов") {
             dispatch({ type: "IS_ANSWER_WRON", payload: 1 });
             dispatch({ type: "WRONG_ANSWER_ACTIVE" });
         } else {
