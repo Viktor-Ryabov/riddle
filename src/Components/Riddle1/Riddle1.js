@@ -3,12 +3,12 @@ import CaptureForm from "../../Modules/CaptureForm/CaptureForm";
 import { withModal } from "../../hoc/withModal.js";
 import { useDispatch, useSelector } from "react-redux";
 import InfoBlock from "../../Modules/InfoBlock/InfoBlock.js";
-import WrongAnswer from "../../Modules/WrongAnswer/WrongAnswer.js";
-import RightAnswer from "../../Modules/RightAnswer/RightAnswer.js";
+import WrongAnswerPopup from "../../Modules/WrongAnswerPopup/WrongAnswerPopup.js";
+import RightAnswerPopup from "../../Modules/RightAnswerPopup/RightAnswerPopup.js";
 
 const WithModalQuestion = withModal(CaptureForm);
-const WithModalWrongAnswer = withModal(WrongAnswer);
-const WithModalRightAnswer = withModal(RightAnswer);
+const WithModalWrongAnswer = withModal(WrongAnswerPopup);
+const WithModalRightAnswer = withModal(RightAnswerPopup);
 
 const Riddle1 = () => {
     const state = useSelector((state) => state);

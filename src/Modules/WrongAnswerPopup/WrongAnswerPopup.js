@@ -1,8 +1,8 @@
 import React from "react";
-import Styles from "./WrongAnswer.module.css";
+import Styles from "./WrongAnswerPopup.module.css";
 import { useDispatch } from "react-redux";
 
-const WrongAnswer = () => {
+const WrongAnswerPopup = () => {
     const dispatch = useDispatch();
 
     return (
@@ -26,4 +26,4 @@ const WrongAnswer = () => {
     );
 };
 
-export default WrongAnswer;
+export default WrongAnswerPopup;

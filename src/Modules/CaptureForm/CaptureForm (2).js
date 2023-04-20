@@ -11,21 +11,23 @@ const CaptureForm = () => {
     let rightAnswer = 1;
 
     const whatIsRightAnswer = (number) => {
-            if (number === 1) {
-                rightAnswer = rightAnswersObject.first;
-            } else if (number === 2) {
-                rightAnswer = rightAnswersObject.second;
-            } else if (number === 3) {
-                rightAnswer = rightAnswersObject.third;
-            } else if (number === 4) {
-                rightAnswer = rightAnswersObject.fourth;
-            } else if (number === 5) {
-                rightAnswer = rightAnswersObject.fifth;
-            }
-            console.log(`rightAnswer is: ${rightAnswer}`);
+        if (number == 1){
+            rightAnswer = rightAnswersObject.first;;
+        } else if (number == 2) {
+            rightAnswer = rightAnswersObject.second
+        } else if (number == 3) {
+            rightAnswer = rightAnswersObject.third;
+        } else if (number == 4) {
+            rightAnswer = rightAnswersObject.fourth;
+        } else if (number == 5) {
+            rightAnswer = rightAnswersObject.fifth;
+        }
+       
+        console.log(`rightAnswer is: ${rightAnswer}`);
     };
 
     const getInputData = () => {
+        
         const newAnswer = document.querySelector("#riddleAnswer").value;
         dispatch({ type: "GOT_ANSWER", payload: newAnswer });
     };

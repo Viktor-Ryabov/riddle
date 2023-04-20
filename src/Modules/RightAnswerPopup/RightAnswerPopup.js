@@ -1,24 +1,26 @@
 import React from "react";
-import Styles from "./RightAnswer.module.css";
+import Styles from "./RightAnswerPopup.module.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-const RightAnswer = () => {
+const RightAnswerPopup = () => {
+    console.log()
 
     const dispatch = useDispatch();
 
     const numrebQuestionPage = useSelector((state) => state.numberOfCurrentQuestion);
+    console.log(numrebQuestionPage)
     // console.log(numrebQuestionPage);
 
     const questionPage = (number) => {
         switch (number) {
-            case 2:
+            case 1:
                 return "/second";
-            case 3:
+            case 2:
                 return "/third";
-            case 4:
+            case 3:
                 return "/fourth";
-            case 5:
+            case 4:
                 return "/fifth";
             default:
                 return "/";
@@ -29,7 +31,6 @@ const RightAnswer = () => {
         dispatch({ type: "RIGHT_ANSWER_DISABLED" });
     }
 
-    // console.log(questionPage(numrebQuestionPage))
 
     return (
         <div className={Styles.container}>
@@ -46,4 +47,4 @@ const RightAnswer = () => {
     );
 };
 
-export default RightAnswer;
+export default RightAnswerPopup;
