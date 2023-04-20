@@ -11,7 +11,7 @@ export const answerReducer = (state = defaultState, action) => {
                 wronAnswerNoticeActive: true,
             };
             case "RIGHT_ANSWER":
-                return { ...state, rightAnswer: state.rightAnswer + action.plusOne };
+                return { ...state, numberOfCurrentQuestion: state.numberOfCurrentQuestion + action.plusOne };
         case "QUESTION_NOTICE_ACTIVE":
             return { ...state, questionNotiseActive: true};
         case "WRONG_ANSWER_ACTIVE":

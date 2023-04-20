@@ -14,13 +14,13 @@ const RightAnswerPopup = () => {
 
     const questionPage = (number) => {
         switch (number) {
-            case 1:
-                return "/second";
             case 2:
-                return "/third";
+                return "/second";
             case 3:
-                return "/fourth";
+                return "/third";
             case 4:
+                return "/fourth";
+            case 5:
                 return "/fifth";
             default:
                 return "/";
