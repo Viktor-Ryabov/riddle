@@ -1,8 +1,8 @@
 .button {
     margin: 15px;
     padding: 10px;
-    width: 250px;
-    outline: solid #61dafb 1px;
+    width: fit-content;
+    outline: solid #1da1f2 1px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -10,12 +10,13 @@
     align-items: center;
     grid-area: supack;
     text-decoration: none;
-    color: #61dafb;
+    color: rgb(255, 255, 255);
     font-family: TkachenkoSketch;
     grid-area: button;
     box-sizing: content-box;
     max-height: 50px;
     justify-content: center;
+    background-color: #1da1f2;
     
 }
 
@@ -25,8 +26,7 @@
     transform: scale(0.95, 0.95);
     transition: all .2s;
     animation: shadow 1.6s infinite linear;
-    background-color: #61dafb;
-    color: black;
+    background-color: #1da1f2;
     outline: none;
     font-weight: 300;
 
@@ -34,7 +34,7 @@
 
 @keyframes shadow {
     0% {
-      box-shadow: 0 0 10px 0px #61dafb, 0 0 10px 0px #61dafb;
+      box-shadow: 0 0 10px 0px #1da1f2, 0 0 10px 0px #1da1f2;
     }
     30% {
       box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 50px rgba(255, 48, 26, 0);
@@ -48,7 +48,7 @@
 }
 
 .text {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 300;
     line-height: 26px;
 }
@@ -66,9 +66,9 @@
     }
     
     .text {
-        font-size: 12px;
+        font-size: 16px;
         font-weight: 300;
-        line-height: 12px;
+        line-height: 16px;
     }
     
 }
