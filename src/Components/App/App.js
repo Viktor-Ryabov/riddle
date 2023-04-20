@@ -8,6 +8,8 @@ import Riddle5 from "../Riddle5/Riddle5";
 import { Provider } from "react-redux";
 import { store } from "../../store/store.js";
 import Main from "../../Pages/Main/Main";
+import About from "../../Pages/About/About";
+import Contacts from "../../Pages/Contacts/Contacts";
 
 
 function App() {
@@ -15,7 +17,9 @@ function App() {
         <Provider store={store}>
                 <div className="App">
                     <Routes>
-                        <Route exact path="/" element={<Main />} />
+                        <Route exact path="*" element={<Main />} />
+                        <Route exact path="/about" element={<About />} />
+                        <Route exact path="/contacts" element={<Contacts />} />
                         <Route exact path="/first" element={<Riddle1 />} />
                         <Route path="/second" element={<Riddle2 />} />
                         <Route path="/third" element={<Riddle3 />} />

@@ -18,18 +18,24 @@ export const answerReducer = (state = defaultState, action) => {
             return { ...state, wronAnswerNoticeActive: true};
         case "RIGHT_ANSWER_ACTIVE":
             return { ...state, rightAnswerNotiseActive: true};
+        case "REGISTRATION_POPUP_ACTIVE":
+            return { ...state, registrationPopupActive: true};
+
+
         case "QUESTION_NOTICE_DISABLED":
             return { ...state, questionNotiseActive: false };
         case "WRONG_ANSWER_DISABLED":
             return { ...state, wronAnswerNoticeActive: false };
         case "RIGHT_ANSWER_DISABLED":
             return { ...state, rightAnswerNotiseActive: false };
+        case "REGISTRATION_POPUP_DISABLED":
+            return { ...state, registrationPopupActive: false };
 
 
         //     case "MODAL_ACTIVE":
         //         return { ...state, modal: true };
             case "ALL_MODAL_DISABLED":
-                return { ...state, questionNotiseActive: false, wronAnswerNoticeActive: false, rightAnswerNotiseActive: false };
+                return { ...state, questionNotiseActive: false, wronAnswerNoticeActive: false, rightAnswerNotiseActive: false, registrationPopupActive: false };
         // case: "IS_ANSWER_RIGHT":
 
         default:

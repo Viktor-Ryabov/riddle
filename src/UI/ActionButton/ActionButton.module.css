@@ -14,7 +14,9 @@
     color: #61dafb;
     font-family: TkachenkoSketch;
     grid-area: button;
-    box-sizing: border-box;
+    box-sizing: content-box;
+    max-height: 50px;
+    justify-content: center;
     
 }
 
