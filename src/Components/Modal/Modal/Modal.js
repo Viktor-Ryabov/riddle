@@ -1,9 +1,7 @@
 import { ModalOwerlay } from "../ModalOwerlay/ModalOwerlay.js";
-import { Children, useCallback, useEffect } from "react";
 import CloseIcon from "../../../UI/CloseIcon/CloseIcon.js";
 import ReactDOM from "react-dom";
 import Styles from "./Modal.module.css";
-import CaptureForm from "../../../Modules/CaptureForm/CaptureForm.js";
 
 const Modal = ({ ...props }) => {
 
