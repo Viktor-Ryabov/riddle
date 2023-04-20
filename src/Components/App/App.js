@@ -7,19 +7,30 @@ import Riddle4 from "../Riddle4/Riddle4";
 import Riddle5 from "../Riddle5/Riddle5";
 import { Provider } from "react-redux";
 import { store } from "../../store/store.js";
+import Main from "../../Pages/Main/Main";
+import About from "../../Pages/About/About";
+import Contacts from "../../Pages/Contacts/Contacts";
+import PersonalPage from "../../Pages/PersonalPage/PersonalPage";
+import Header from "../Header/Header";
 
 
 function App() {
     return (
         <Provider store={store}>
                 <div className="App">
+                    <Header/>
                     <Routes>
-                        <Route exact path="/" element={<Riddle1 />} />
+                        <Route exact path="*" element={<Main />} />
+                        <Route exact path="/about" element={<About />} />
+                        <Route exact path="/contacts" element={<Contacts />} />
+                        <Route exact path="/personal_page" element={<PersonalPage />} />
+                        <Route exact path="/first" element={<Riddle1 />} />
                         <Route path="/second" element={<Riddle2 />} />
                         <Route path="/third" element={<Riddle3 />} />
                         <Route path="/fourth" element={<Riddle4 />} />
                         <Route path="/fifth" element={<Riddle5 />} />
                     </Routes>
+                    {/* <Footer /> */}
                 </div>
         </Provider>
     );
