@@ -2,14 +2,13 @@
     margin: 15px;
     padding: 10px;
     width: 250px;
-    outline: solid black 1px;
+    outline: solid #61dafb 1px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
     grid-area: supack;
-    box-shadow: 0px 0px 12px -2px rgba(0,0,0,0.5);
     text-decoration: none;
     color: #61dafb;
     font-family: TkachenkoSketch;
