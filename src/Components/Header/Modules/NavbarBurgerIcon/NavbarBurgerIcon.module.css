@@ -1,0 +1,69 @@
+.button {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    grid-area: burgeerLogo;
+}
+.logo {
+    margin: 0;
+    padding: 25px;
+    width: 100px;
+    opacity: 60%;
+    background-size: cover;
+}
+
+.logo:hover {
+    cursor: pointer;
+    animation: tilt-n-move-shaking 0.5s infinite;
+}
+
+@keyframes tilt-n-move-shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 5px) rotate(5deg);
+    }
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+    75% {
+        transform: translate(-5px, 5px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.buttonIsDisabled {
+    display: none;
+    /* color: white; */
+}
+
+
+@media screen and (max-width: 700px) {
+    .button {
+        display: none;
+        position:inherit;
+        width: 100%;
+        padding: 0;
+        grid-area: burgerLogo;
+        height: -moz-fit-content;
+        height: fit-content;
+        align-self: end;
+        justify-content: flex-start;
+        margin-left: 10px;
+        
+    }
+    .logo{
+        padding: 0px;
+        width: 30px;
+        
+    }
+}

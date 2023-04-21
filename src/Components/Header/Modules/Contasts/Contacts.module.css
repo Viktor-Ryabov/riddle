@@ -1,0 +1,36 @@
+.contacts{
+    margin: 0 15px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: fit-content;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: left;
+    grid-area: contacts;
+    height: 70%;
+    
+}
+
+@media screen and (max-width: 800px){
+    .contacts {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .contacts {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        width: 95%
+        
+    };
+}
