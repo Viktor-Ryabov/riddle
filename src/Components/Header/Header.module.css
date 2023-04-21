@@ -13,7 +13,7 @@
     background-color: #d4c8b5;
 }
 
-.borderBlock{
+.borderBlock {
     display: flex;
     flex-direction: row;
     background: #346962;
@@ -21,7 +21,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-        border-radius: 0 0 15px 15px;
 }
 
 @media screen and (max-width: 800px) {
@@ -31,7 +30,6 @@
 }
 @media screen and (max-width: 550px) {
     .borderBlock {
-        
         height: 50px;
         /* display: grid;
         grid-template-columns: fit-content auto;
