@@ -6,11 +6,13 @@ import CurrentTaskButton from "./Modules/CurrentTaskButton/CurrentTaskButton.js"
 
 const Header = () => {
     return (
-        <div className={Styles.header}>
-                <CurrentTaskButton />
+        <section className={Styles.header}>
+            <div className={Styles.borderBlock}>
                 <LogoSection size="" />
+                <CurrentTaskButton />
                 <Contacts />
-        </div>
+            </div>
+        </section>
     );
 };
 

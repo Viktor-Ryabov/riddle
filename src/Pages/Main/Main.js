@@ -24,7 +24,7 @@ const Main = () => {
             <WithModalRegistration active={state.registrationPopupActive} />
             <WithModalEntery active={state.enteryPopupActive} />
             <section className="Main">
-                <p className="title">Главная страница</p>
+                <p className="main_title">Главная страница</p>
                 <div className="buttons">
                     <ActionButton text1="О нас" to="/about" />
                     <ActionButton text1="Контакты" to="/contacts" />

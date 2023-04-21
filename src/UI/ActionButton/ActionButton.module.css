@@ -32,15 +32,6 @@
 
 }
 
-@keyframes shadow {
-    0% {
-      box-shadow: 0 0 10px 0px #1da1f2, 0 0 10px 0px #1da1f2;
-    }
-    30% {
-      box-shadow: 0 0 18px 6px rgba(255, 48, 26, 0), 0 0 4px 50px rgba(255, 48, 26, 0);
-    }
-  }
-
 .h4 {
     font-size: 34px;
     font-weight: 600;

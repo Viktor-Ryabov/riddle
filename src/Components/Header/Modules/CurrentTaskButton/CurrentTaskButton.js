@@ -4,8 +4,9 @@ import Styles from "./CurrentTaskButton.module.css";
 const CurrentTaskButton = () => {
     return (
         <Link to="/first" className={Styles.button}>
-            <p className={Styles.text}>текущая</p>
-            <p className={Styles.text}>задача</p>
+            <p className={Styles.title}>?</p>
+            {/* <p className={Styles.text}>текущая</p> */}
+            {/* <p className={Styles.text}>задача</p> */}
         </Link>
     );
 };

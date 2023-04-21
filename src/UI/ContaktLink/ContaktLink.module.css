@@ -1,15 +1,15 @@
-@import url(../../fonts/Guerrilla/Guerrilla.css);
 
 .contaktLink {
+    width: 30px;
+    height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     text-decoration: none;
     color: black;
-    font-family: Guerrilla;
 }
 .contaktLink:hover {
     cursor: pointer;
@@ -27,28 +27,27 @@
     }
 }
 .contaktLinkIcon {
-    margin: 0 5px 0 0;
     padding: 0;
-    width: 15px;
+    height: 100%;
 }
 
 @media screen and (max-width: 800px) {
     .contaktLinkIcon {
-        margin: 0 3px 0 0;
-        width: 10px;
+        width: 30px;
+        /* margin: 0 3px 0 0; */
+        height: 100%;
     }
 }
 
 @media screen and (max-width: 550px) {
     .contaktLink {
-        height: 20px;
         display: flex;
         flex-direction: row;
         align-items: center;
         background-color: rgb(226, 226, 226);
         padding: 3px;
         border-radius: 5px;
-        margin: 5px;
-        flex: auto;
+        /* margin: 5px; */
+        /* flex: auto; */
     }
 }

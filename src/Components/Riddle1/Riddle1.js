@@ -1,4 +1,4 @@
-import "./Riddle1.css";
+import Styles from "./Riddle1.module.css";
 import CaptureForm from "../../Modules/CaptureForm/CaptureForm";
 import { withModal } from "../../hoc/withModal.js";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,16 +19,16 @@ const Riddle1 = () => {
             <WithModalQuestion active={state.questionNotiseActive} />
             <WithModalWrongAnswer active={state.wronAnswerNoticeActive} />
             <WithModalRightAnswer active={state.rightAnswerNotiseActive} />
-            <section className="Riddle1-header">
-                <div className="Riddle1-key">оэяма</div>
-                <p>Аве, Цезарь!</p>
+            <section className={Styles.Riddle1_header}>
+                <p className={Styles.text}>оэяма</p>
+                <p className={Styles.text}>Цезарь  3 -></p>
                 <button
-                    className="Riddle1-link"
+                    className={Styles.link}
                     onClick={() => dispatch({ type: "QUESTION_NOTICE_ACTIVE" })}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    :->
+                    click
                 </button>
             </section>
             <InfoBlock />

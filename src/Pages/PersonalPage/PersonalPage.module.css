@@ -1,5 +1,5 @@
 .contacts {
-    background-color: #282c34;
+    background-color: #d4c8b5;
     height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
@@ -22,5 +22,5 @@
 .title {
     margin: 0;
     font-size: 35px;
-    color: #61dafb;
+    color:#044443;
 }

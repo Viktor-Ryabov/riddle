@@ -10,12 +10,12 @@ export const ContaktLink = (props) => {
                     className={Styles.contaktLink}
                     href={props.href}
                 >
-                    {/* <img
+                    <img
                         className={Styles.contaktLinkIcon}
                         src={props.src}
                         alt={props.alt}
-                    /> */}
-                    {props.text}
+                    />
+                    {/* {props.text} */}
                 </a>
             </>
         </>

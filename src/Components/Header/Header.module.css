@@ -8,15 +8,20 @@
 .header {
     margin: 0;
     padding: 0;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    background: #1da1f2;
     z-index: 9999999;
     position: sticky;
-    top: 0;
+    background-color: #d4c8b5;
+}
+
+.borderBlock{
+    display: flex;
+    flex-direction: row;
+    background: #346962;
+    height: fit-content;
     align-items: center;
     justify-content: space-between;
+    padding: 10px;
+        border-radius: 0 0 15px 15px;
 }
 
 @media screen and (max-width: 800px) {
@@ -25,14 +30,14 @@
     }
 }
 @media screen and (max-width: 550px) {
-    .header {
-        padding: 5px;
+    .borderBlock {
+        
         height: fit-content;
         display: grid;
         grid-template-columns: fit-content auto;
         grid-template-rows: 50px min-content;
         grid-template-areas: 
-        " supack logo"
-        " contacts contacts";
+        " logo contacts task ";
+        /* " contacts contacts"; */
     }
 }
