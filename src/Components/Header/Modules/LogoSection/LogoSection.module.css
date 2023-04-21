@@ -20,6 +20,6 @@
 }
 
 .logo{
-    width: 100px;
-    height: 65%;
+    background-size: cover;
+    height: 100%;
 }
