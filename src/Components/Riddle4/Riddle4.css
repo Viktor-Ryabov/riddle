@@ -5,7 +5,7 @@
 
 .Riddle1-header {
     background-color: #282c34;
-    min-height: 90vh;
+    height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,0 +1,25 @@
+.logoSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    grid-area: logo;
+}
+@media screen and (max-width: 800px) {
+    .logoSection {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .logoSection {
+        width: 190px;
+    }
+}
+
+.logo{
+    width: 100px;
+    height: 65%;
+}
