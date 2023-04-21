@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/riddle/static/css/main.fc0c869a.css",
-    "main.js": "/riddle/static/js/main.49a4bf4f.js",
+    "main.css": "/riddle/static/css/main.64dee695.css",
+    "main.js": "/riddle/static/js/main.b167404e.js",
     "static/js/787.7ed4f30b.chunk.js": "/riddle/static/js/787.7ed4f30b.chunk.js",
     "static/media/wollenWirBrannenSVG.svg": "/riddle/static/media/wollenWirBrannenSVG.5584994f87c120d00cf9.svg",
+    "static/media/whatsapp-black.svg": "/riddle/static/media/whatsapp-black.0777ff5aa5ee15251679539eead05a6c.svg",
+    "static/media/vk_black_logo.svg": "/riddle/static/media/vk_black_logo.1d35eac8a74239ca722ed5f46f2af401.svg",
+    "static/media/QL_white.svg": "/riddle/static/media/QL_white.c98e82becdd4f01d1eed12a9a5acc6b0.svg",
+    "static/media/phone-symbol.svg": "/riddle/static/media/phone-symbol.fd9d053e5cd5df278bfbabd1e5bad4f8.svg",
+    "static/media/telegram_icon.svg": "/riddle/static/media/telegram_icon.9059b7aae31034426b72c5e92e80a956.svg",
     "index.html": "/riddle/index.html",
-    "main.fc0c869a.css.map": "/riddle/static/css/main.fc0c869a.css.map",
-    "main.49a4bf4f.js.map": "/riddle/static/js/main.49a4bf4f.js.map",
+    "main.64dee695.css.map": "/riddle/static/css/main.64dee695.css.map",
+    "main.b167404e.js.map": "/riddle/static/js/main.b167404e.js.map",
     "787.7ed4f30b.chunk.js.map": "/riddle/static/js/787.7ed4f30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc0c869a.css",
-    "static/js/main.49a4bf4f.js"
+    "static/css/main.64dee695.css",
+    "static/js/main.b167404e.js"
   ]
 }
