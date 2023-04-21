@@ -32,12 +32,12 @@
 @media screen and (max-width: 550px) {
     .borderBlock {
         
-        height: fit-content;
-        display: grid;
+        height: 50px;
+        /* display: grid;
         grid-template-columns: fit-content auto;
-        grid-template-rows: 50px min-content;
-        grid-template-areas: 
-        " logo contacts task ";
+        grid-template-rows: 50px min-content; */
+        /* grid-template-areas: 
+        " logo contacts task"; */
         /* " contacts contacts"; */
     }
 }

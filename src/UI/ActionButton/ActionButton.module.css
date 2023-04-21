@@ -2,21 +2,21 @@
     margin: 15px;
     padding: 10px;
     width: fit-content;
-    outline: solid #1da1f2 1px;
-    border-radius: 10px;
+    /* outline: solid #1da1f2 1px; */
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
     grid-area: supack;
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #d4c8b5;
     font-family: TkachenkoSketch;
     grid-area: button;
     box-sizing: content-box;
     max-height: 50px;
     justify-content: center;
-    background-color: #1da1f2;
+    background-color: #044443;
     
 }
 

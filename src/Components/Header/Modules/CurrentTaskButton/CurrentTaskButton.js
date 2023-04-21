@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Styles from "./CurrentTaskButton.module.css";
 
-const CurrentTaskButton = () => {
+const CurrentTaskButton = (props) => {
     return (
         <Link to="/first" className={Styles.button}>
             <p className={Styles.title}>?</p>
