@@ -9,12 +9,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 0 0 10px 10px;
-    margin-bottom: 10px;
     overflow-wrap: normal;
-    flex-grow: 1;
     text-decoration: none;
-    width: 100%;
+    width: 25%;
 }
 
 .scrollchor{
@@ -35,6 +32,12 @@
     animation: ani 1s forwards;
 }
 
+.link{
+    list-style-type: none;
+    text-decoration: none;
+    color: #d4c8b5;
+}
+
 @keyframes ani {
     0% {
         background: #346962;
@@ -49,20 +52,14 @@
 @media screen and (max-width: 1000px) {
     .button {
         font-size: 10px;
-        padding: 0 0 5px 10px;
-        margin-bottom: 5px;
     }
 }
 @media screen and (max-width: 700px) {
     .button {
         height: 40px;
-        /* outline: 1px solid rgb(216, 214, 214); */
         box-sizing: border-box;
         justify-content: center;
-        /* margin-bottom: 0px; */
         align-items: center;
         padding: 5px;
-        margin: 5px;
-        /* border-radius: 5px; */
     }
 }

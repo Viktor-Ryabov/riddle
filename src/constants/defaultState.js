@@ -5,12 +5,9 @@ export const defaultState = {
     modal: false,    
     countAnswers: 0,
     answer: "...",
-    navbarButtons: {
-        main: true,
-        about: false,
-        contacts: false,
-        registration: false,
-        personalPage: false,
-        questionPage: false,
-    }
+    navbarButton_Main: true,
+    navbarButton_About: false,
+    navbarButton_Contacts: false,
+    navbarButton_Registration: false,
+    navbarButton_QuestionPage: false,
 };

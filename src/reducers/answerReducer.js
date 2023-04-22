@@ -52,53 +52,50 @@ export const answerReducer = (state = defaultState, action) => {
                 enteryPopupActive: false,
             };
 
-        // case "SET_MAIN_ACTIVE":
-        //     return {
-        //         ...state,
-        //         navbarButtons: {
-        //             main: true,
-        //             about: false,
-        //             contacts: false,
-        //             registration: false,
-        //             personalPage: false,
-        //             questionPage: false,
-        //         },
-        //     };
-        // case "SET_ABOUT_ACTIVE":
-        //     return {
-        //         ...state,
-        //         navbarButtons: {
-        //             main: false,
-        //             about: true,
-        //             contacts: false,
-        //             registration: false,
-        //             personalPage: false,
-        //             questionPage: false,
-        //         },
-        //     };
-        // case "SET_REGISTRATION_ACTIVE":
-        //     return {
-        //         ...state,
-        //         navbarButtons: {
-        //             main: false,
-        //             about: false,
-        //             contacts: false,
-        //             registration: true,
-        //             personalPage: false,
-        //             questionPage: false,
-        //         },
-        //     };
-        // case "SET_CONTACTS_ACTIVE":
+        case "SET_MAIN_ACTIVE":
             return {
                 ...state,
-                navbarButtons: {
-                    main: false,
-                    about: false,
-                    contacts: true,
-                    registration: false,
-                    personalPage: false,
-                    questionPage: false,
-                },
+                navbarButton_Main: true,
+                navbarButton_About: false,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: false,
+                navbarButton_QuestionPage: false,
+            };
+        case "SET_ABOUT_ACTIVE":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: true,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: false,
+                navbarButton_QuestionPage: false,
+            };
+        case "SET_CONTACTS_ACTIVE":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: false,
+                navbarButton_Contacts: true ,
+                navbarButton_Registration: false,
+                navbarButton_QuestionPage: false,
+            };
+        case "SET_REGISTRATION_ACTIVE":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: false,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: true,
+                navbarButton_QuestionPage: false,
+            };
+        case "SET_QUESTION_PAGE_ACTIVE":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: false,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: false ,
+                navbarButton_QuestionPage: true,
             };
 
         default:
