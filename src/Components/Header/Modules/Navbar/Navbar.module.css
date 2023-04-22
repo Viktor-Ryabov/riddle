@@ -1,0 +1,12 @@
+.navbar {
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    background-color: #346962;
+    color: aliceblue;
+}
+

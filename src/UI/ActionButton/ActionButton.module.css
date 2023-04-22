@@ -3,7 +3,7 @@
     padding: 10px;
     width: fit-content;
     /* outline: solid #1da1f2 1px; */
-    border-radius: 25px;
+    /* border-radius: 25px; */
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -11,7 +11,6 @@
     grid-area: supack;
     text-decoration: none;
     color: #d4c8b5;
-    font-family: TkachenkoSketch;
     grid-area: button;
     box-sizing: content-box;
     max-height: 50px;
@@ -30,6 +29,10 @@
     outline: none;
     font-weight: 300;
 
+}
+
+.button_active{
+    background-color: #044443;
 }
 
 .h4 {

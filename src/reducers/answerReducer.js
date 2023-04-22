@@ -42,8 +42,6 @@ export const answerReducer = (state = defaultState, action) => {
         case "ENTERY_POPUP_DISABLED":
             return { ...state, enteryPopupActive: false };
 
-        //     case "MODAL_ACTIVE":
-        //         return { ...state, modal: true };
         case "ALL_MODAL_DISABLED":
             return {
                 ...state,
@@ -53,7 +51,55 @@ export const answerReducer = (state = defaultState, action) => {
                 registrationPopupActive: false,
                 enteryPopupActive: false,
             };
-        // case: "IS_ANSWER_RIGHT":
+
+        // case "SET_MAIN_ACTIVE":
+        //     return {
+        //         ...state,
+        //         navbarButtons: {
+        //             main: true,
+        //             about: false,
+        //             contacts: false,
+        //             registration: false,
+        //             personalPage: false,
+        //             questionPage: false,
+        //         },
+        //     };
+        // case "SET_ABOUT_ACTIVE":
+        //     return {
+        //         ...state,
+        //         navbarButtons: {
+        //             main: false,
+        //             about: true,
+        //             contacts: false,
+        //             registration: false,
+        //             personalPage: false,
+        //             questionPage: false,
+        //         },
+        //     };
+        // case "SET_REGISTRATION_ACTIVE":
+        //     return {
+        //         ...state,
+        //         navbarButtons: {
+        //             main: false,
+        //             about: false,
+        //             contacts: false,
+        //             registration: true,
+        //             personalPage: false,
+        //             questionPage: false,
+        //         },
+        //     };
+        // case "SET_CONTACTS_ACTIVE":
+            return {
+                ...state,
+                navbarButtons: {
+                    main: false,
+                    about: false,
+                    contacts: true,
+                    registration: false,
+                    personalPage: false,
+                    questionPage: false,
+                },
+            };
 
         default:
             return state;

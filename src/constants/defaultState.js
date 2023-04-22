@@ -5,5 +5,12 @@ export const defaultState = {
     modal: false,    
     countAnswers: 0,
     answer: "...",
-    numberOfCurrentQuestion: 1,
+    navbarButtons: {
+        main: true,
+        about: false,
+        contacts: false,
+        registration: false,
+        personalPage: false,
+        questionPage: false,
+    }
 };

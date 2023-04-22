@@ -4,7 +4,7 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
-    color: #797979;
+    color: #d4c8b5;
     text-align: center;
     display: flex;
     align-items: center;
@@ -26,25 +26,23 @@
 
 }
 
-.activeButton {
-    background-color: #2e8b57;
+.active_button {
+    background-color: #044443;
 }
 
 .button:hover {
     cursor: pointer;
-    background-color: #2e8b57;
-    color: white;
     animation: ani 1s forwards;
 }
 
 @keyframes ani {
     0% {
-        background: white;
-        color: #262f3b;
+        background: #346962;
+        color: #d4c8b5;
     }
     100% {
-        background-color: #2e8b57;
-        color: white;
+        background-color: #044443;
+        color: #d4c8b5;
     }
 }
 
@@ -58,13 +56,13 @@
 @media screen and (max-width: 700px) {
     .button {
         height: 40px;
-        outline: 1px solid rgb(216, 214, 214);
+        /* outline: 1px solid rgb(216, 214, 214); */
         box-sizing: border-box;
         justify-content: center;
-        margin-bottom: 0px;
+        /* margin-bottom: 0px; */
         align-items: center;
         padding: 5px;
         margin: 5px;
-        border-radius: 5px;
+        /* border-radius: 5px; */
     }
 }
