@@ -34,7 +34,6 @@
 @media screen and (max-width: 800px) {
     .contaktLinkIcon {
         width: 30px;
-        /* margin: 0 3px 0 0; */
         height: 100%;
     }
 }
@@ -45,9 +44,6 @@
         flex-direction: row;
         align-items: center;
         background-color: rgb(226, 226, 226);
-        padding: 3px;
         border-radius: 5px;
-        /* margin: 5px; */
-        /* flex: auto; */
     }
 }

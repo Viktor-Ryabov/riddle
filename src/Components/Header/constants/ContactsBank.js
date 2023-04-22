@@ -1,6 +1,6 @@
 import vkIcon from "../image/vk_black_logo.svg";
 import telegIcon from "../image/telegram_icon.svg";
-import whatsappIcon from "../image/whatsapp-black.svg";
+import whatsappIcon from "../image/icons8-whatsapp-64.svg";
 import phoneIcon from "../image/phone-symbol.svg";
 
 export const ContactsBank = [
