@@ -97,6 +97,15 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Registration: false ,
                 navbarButton_QuestionPage: true,
             };
+        case "SET_ALL_PAGES_DISABLED":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: false,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: false ,
+                navbarButton_QuestionPage: false,
+            };
 
         default:
             return state;

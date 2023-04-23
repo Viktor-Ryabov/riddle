@@ -13,8 +13,8 @@ const Header = () => {
             <div className={Styles.borderBlock}>
                 <LogoSection size="" />
                 <Contacts />
-                <ContaktLink src={profileLogo} />
-                <CurrentTaskButton />
+                <ContaktLink src={profileLogo} to="/personal_page" type="SET_ALL_PAGES_DISABLED"/>
+                <CurrentTaskButton type="SET_ALL_PAGES_DISABLED"/>
             </div>
             <Navbar />
         </section>
