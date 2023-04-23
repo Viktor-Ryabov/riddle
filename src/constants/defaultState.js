@@ -2,6 +2,7 @@ export const defaultState = {
     wronAnswerNoticeActive: false,
     rightAnswerNotiseActive: false,    
     questionNotiseActive: false,
+    numberOfCurrentQuestion: 1,
     modal: false,    
     countAnswers: 0,
     answer: "...",
