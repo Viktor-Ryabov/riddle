@@ -1,10 +1,5 @@
-.Riddle1-key {
-
-    font-size: 45px;
-}
-
-.Riddle1-header {
-    background-color: #282c34;
+.Riddle1_header {
+    background-color: #d4c8b5;
     height: calc(100vh - 160px);
     display: flex;
     flex-direction: column;
@@ -14,25 +9,22 @@
     color: white;
 }
 
-.Riddle1-link {
-    color: #61dafb;
+.text{
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    color: #044443;
+}
+
+.text:nth-child(2) {
+    margin: 0 0 25px 0;
+}
+
+.link{
     width: 50px;
     height: 50px;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0);
-    border: #61dafb solid 1px;
     border-radius: 25px;
-}
-.Riddle1-link:hover{
-  cursor: pointer;
-}
-
-
-@keyframes Riddle1-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    background-color: #c73020;
+    color: #d4c8b5;
+    font-size: 20px;
 }

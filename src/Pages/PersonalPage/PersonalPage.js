@@ -6,8 +6,8 @@ const PersonalPage = () => {
 
     return (
         <>
-            <section className="contacts">
-                <p className="title">Персональная страница пользователя</p>
+            <section className={Styles.contacts}>
+                <p className={Styles.title}>Персональная страница пользователя</p>
                 <p>Имя</p>
                 <p>Данные профиля</p>
             </section>

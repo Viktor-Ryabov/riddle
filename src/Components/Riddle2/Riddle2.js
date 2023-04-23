@@ -20,11 +20,11 @@ const Riddle2 = () => {
             <WithModalQuestion active={state.questionNotiseActive} />
             <WithModalWrongAnswer active={state.wronAnswerNoticeActive} />
             <WithModalRightAnswer active={state.rightAnswerNotiseActive} />
-            <section className="Riddle1-header">
-                <div className="Riddle1-key">Россия</div>
+            <section className="Riddle1_header">
+                <div className="Riddle1_key">Россия</div>
                 <p>1733</p>
                 <button
-                    className="Riddle1-link"
+                    className="Riddle1_link"
                     onClick={() => dispatch({ type: "QUESTION_NOTICE_ACTIVE" })}
                     target="_blank"
                     rel="noopener noreferrer"
