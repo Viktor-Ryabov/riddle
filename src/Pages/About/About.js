@@ -16,10 +16,6 @@ const About = () => {
             <section className="about">
                 <p className="title">О нас</p>
                 <p>Юра и Витя Молодцы</p>
-                <div className="about_buttons">
-                    <ActionButton text1="Главная" to="/" />
-                    <ActionButton text1="Контакты" to="/contacts" />
-                </div>
             </section>
         </>
     );

@@ -16,10 +16,6 @@ const Contacts = () => {
             <section className="contacts">
                 <p className="title">Контакты</p>
                 <p>+7 ... ....</p>
-                <div className="contacts_buttons">
-                    <ActionButton text1="Главная" to="/" />
-                    <ActionButton text1="О нас" to="/about" />
-                </div>
             </section>
         </>
     );

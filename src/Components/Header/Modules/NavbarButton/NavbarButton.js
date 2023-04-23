@@ -12,8 +12,8 @@ const NavbarButton = (props) => {
             dispatch({ type: "SET_ABOUT_ACTIVE" });
         } else if (props.page === "contacts") {
             dispatch({ type: "SET_CONTACTS_ACTIVE" });
-        } else if (props.page === "registration") {
-            dispatch({ type: "SET_REGISTRATION_ACTIVE" });
+        } else if (props.page === "rules") {
+            dispatch({ type: "SET_RULES_ACTIVE" });
         }
     };
 

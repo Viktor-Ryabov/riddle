@@ -12,6 +12,7 @@ import About from "../../Pages/About/About";
 import Contacts from "../../Pages/Contacts/Contacts";
 import PersonalPage from "../../Pages/PersonalPage/PersonalPage";
 import Header from "../Header/Header";
+import Rules from "../../Pages/Rules/Rules";
 
 
 function App() {
@@ -21,10 +22,11 @@ function App() {
                     <Header/>
                     <Routes>
                         <Route exact path="*" element={<Main />} />
-                        <Route exact path="/about" element={<About />} />
-                        <Route exact path="/contacts" element={<Contacts />} />
-                        <Route exact path="/personal_page" element={<PersonalPage />} />
-                        <Route exact path="/first" element={<Riddle1 />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/contacts" element={<Contacts />} />
+                        <Route path="/personal_page" element={<PersonalPage />} />
+                        <Route path="/rules" element={<Rules />} />
+                        <Route path="/first" element={<Riddle1 />} />
                         <Route path="/second" element={<Riddle2 />} />
                         <Route path="/third" element={<Riddle3 />} />
                         <Route path="/fourth" element={<Riddle4 />} />

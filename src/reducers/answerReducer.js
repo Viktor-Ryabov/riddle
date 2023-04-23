@@ -79,13 +79,13 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
             };
-        case "SET_REGISTRATION_ACTIVE":
+        case "SET_RULES_ACTIVE":
             return {
                 ...state,
                 navbarButton_Main: false,
                 navbarButton_About: false,
                 navbarButton_Contacts: false,
-                navbarButton_Registration: true,
+                navbarButton_Rules : true,
                 navbarButton_QuestionPage: false,
             };
         case "SET_QUESTION_PAGE_ACTIVE":

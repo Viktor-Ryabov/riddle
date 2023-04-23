@@ -27,10 +27,10 @@ const Navbar = () => {
                 active={state.navbarButton_Contacts}
             />
             <NavbarButton
-                page="registration"
-                to="/registration"
-                text="РЕГИСТРАЦИЯ"
-                active={state.navbarButton_Registration}
+                page="rules"
+                to="/rules"
+                text="ПРАВИЛА"
+                active={state.navbarButton_rules}
             />
         </div>
     );

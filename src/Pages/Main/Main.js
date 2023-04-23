@@ -25,20 +25,6 @@ const Main = () => {
             <WithModalEntery active={state.enteryPopupActive} />
             <section className="Main">
                 <p className="main_title">Главная страница</p>
-                <div className="buttons">
-                    <ActionButton text1="О нас" to="/about" />
-                    <ActionButton text1="Контакты" to="/contacts" />
-                </div>
-                <div className="buttons">
-                    <ActionButton
-                        text1="Войти"
-                        actionFunction={setEnteryModalActive}
-                    />
-                    <ActionButton
-                        text1="Регистрация"
-                        actionFunction={setRegistrationModalActive}
-                    />
-                </div>
             </section>
         </>
     );

@@ -10,4 +10,6 @@ export const defaultState = {
     navbarButton_Contacts: false,
     navbarButton_Registration: false,
     navbarButton_QuestionPage: false,
+    navbarButton_rules: false,
+
 };
