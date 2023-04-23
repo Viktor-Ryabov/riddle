@@ -1,6 +1,6 @@
-.rules {
+.contacts {
     background-color: #d4c8b5;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 110px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,8 +9,18 @@
     color: white;
 }
 
-.rules_title {
+.contacts_buttons{
+    margin: 30px 0;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    scale: 80%;
+
+}
+.title {
     margin: 0;
     font-size: 35px;
-    color: #044443;
+    color:#044443;
 }
