@@ -21,7 +21,7 @@ const Navbar = () => {
             />
             <NavbarButton
                 page="contacts"
-                to="/contsct"
+                to="/contacts"
                 text="КОНТАКТЫ"
                 active={state.navbarButton_Contacts}
             />
