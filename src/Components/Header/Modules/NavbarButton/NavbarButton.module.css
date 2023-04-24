@@ -27,12 +27,13 @@
     box-shadow: 0 3px 0px 0px #044443;
     /* border-bottom: solid 4px #044443; */
     /* background-color: #044443; */
+    animation: ani 0.5s backwards ease-out;
 }
 
-.button:hover {
+/* .button:hover {
     cursor: pointer;
     animation: ani 1s forwards;
-}
+} */
 
 .link{
     list-style-type: none;
@@ -42,14 +43,16 @@
 
 @keyframes ani {
     0% {
-        /* background: #346962;
-        color: #d4c8b5; */
-        box-shadow: none;
+        background: #346962;
+        color: #d4c8b5;
+    }
+    50% {
+        background-color: #044443;
+        color: #d4c8b5;
     }
     100% {
-        /* background-color: #044443;
-        color: #d4c8b5; */
-        box-shadow: 0 3px 0px 0px #044443;
+        background: #346962;
+        color: #d4c8b5;
     }
 }
 

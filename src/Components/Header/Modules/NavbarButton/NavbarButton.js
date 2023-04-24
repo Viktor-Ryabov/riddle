@@ -19,7 +19,7 @@ const NavbarButton = (props) => {
 
     return (
         
-            <button
+            <Link to={props.to}
             onClick={setButtonActive}
             className={
                 props.active
@@ -27,11 +27,9 @@ const NavbarButton = (props) => {
                     : Styles.button
             }
         >
-            <Link to={props.to} className={Styles.link}>
             {props.text}
             </Link>
             
-            </button>
     );
 };
 
