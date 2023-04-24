@@ -60,6 +60,7 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Contacts: false,
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
+                navbarButton_Rules: false,
             };
         case "SET_ABOUT_ACTIVE":
             return {
@@ -69,15 +70,17 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Contacts: false,
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
+                navbarButton_Rules: false,
             };
         case "SET_CONTACTS_ACTIVE":
             return {
                 ...state,
                 navbarButton_Main: false,
                 navbarButton_About: false,
-                navbarButton_Contacts: true ,
+                navbarButton_Contacts: true,
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
+                navbarButton_Rules: false,
             };
         case "SET_RULES_ACTIVE":
             return {
@@ -85,8 +88,9 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Main: false,
                 navbarButton_About: false,
                 navbarButton_Contacts: false,
-                navbarButton_Rules : true,
+                navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
+                navbarButton_Rules: true,
             };
         case "SET_QUESTION_PAGE_ACTIVE":
             return {
@@ -94,8 +98,9 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Main: false,
                 navbarButton_About: false,
                 navbarButton_Contacts: false,
-                navbarButton_Registration: false ,
+                navbarButton_Registration: false,
                 navbarButton_QuestionPage: true,
+                navbarButton_Rules: false,
             };
         case "SET_ALL_PAGES_DISABLED":
             return {
@@ -103,8 +108,9 @@ export const answerReducer = (state = defaultState, action) => {
                 navbarButton_Main: false,
                 navbarButton_About: false,
                 navbarButton_Contacts: false,
-                navbarButton_Registration: false ,
+                navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
+                navbarButton_Rules: false,
             };
 
         default:

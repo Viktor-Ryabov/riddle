@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
     const state = useSelector((state) => state);
 
-    console.log(state);
     return (
         <div className={Styles.navbar}>
             <NavbarButton
@@ -30,7 +29,7 @@ const Navbar = () => {
                 page="rules"
                 to="/rules"
                 text="ПРАВИЛА"
-                active={state.navbarButton_rules}
+                active={state.navbarButton_Rules}
             />
         </div>
     );

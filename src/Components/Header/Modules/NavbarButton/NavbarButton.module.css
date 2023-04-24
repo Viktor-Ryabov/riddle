@@ -24,7 +24,9 @@
 }
 
 .active_button {
-    background-color: #044443;
+    box-shadow: 0 3px 0px 0px #044443;
+    /* border-bottom: solid 4px #044443; */
+    /* background-color: #044443; */
 }
 
 .button:hover {
@@ -39,14 +41,14 @@
 }
 
 @keyframes ani {
-    0% {
+    /* 0% {
         background: #346962;
         color: #d4c8b5;
     }
     100% {
         background-color: #044443;
         color: #d4c8b5;
-    }
+    } */
 }
 
 @media screen and (max-width: 1000px) {
@@ -56,7 +58,7 @@
 }
 @media screen and (max-width: 700px) {
     .button {
-        height: 40px;
+        height: 30px;
         box-sizing: border-box;
         justify-content: center;
         align-items: center;

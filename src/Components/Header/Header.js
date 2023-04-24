@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <section className={Styles.header}>
             <div className={Styles.borderBlock}>
-                <LogoSection size="" />
+                <LogoSection size="" type="SET_MAIN_ACTIVE"/>
                 <Contacts />
                 <ContaktLink src={profileLogo} to="/personal_page" type="SET_ALL_PAGES_DISABLED"/>
                 <CurrentTaskButton type="SET_ALL_PAGES_DISABLED"/>

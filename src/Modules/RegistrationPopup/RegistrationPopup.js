@@ -9,7 +9,6 @@ const RegistrationPopup = () => {
 
     const closePopup = () => {
         dispatch({ type: "REGISTRATION_POPUP_DISABLED" });
-        console.log(123);
     };
 
     return (
