@@ -13,6 +13,7 @@ import Contacts from "../../Pages/Contacts/Contacts";
 import PersonalPage from "../../Pages/PersonalPage/PersonalPage";
 import Header from "../Header/Header";
 import Rules from "../../Pages/Rules/Rules";
+import Auth from "../Auth";
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
                 <div className="App">
                     <Header/>
                     <Routes>
-                        <Route exact path="*" element={<Main />} />
+                        <Route exact path="*" element={<Auth />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contacts" element={<Contacts />} />
                         <Route path="/personal_page" element={<PersonalPage />} />
