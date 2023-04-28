@@ -16,7 +16,7 @@ const Auth = () => {
     return (
         <Container
             className="d-flex justify-content-center align-items-center"
-            style={{ height: window.innerHeight - 54 }}
+            style={{ height: window.innerHeight - 80 }}
         >
             <Card style={{ width: 600 }} className="p-5">
                 <h2 className="ml-auto">
@@ -49,9 +49,10 @@ const Auth = () => {
                         active
                             size="sm"
                             type="submit"
-                            className={"mt-3 align-self-center"}
-                            variant={"outline-success"}
+                            className={"mt-3 align-self-center btl-light"}
+                            variant={"btn-outline-secondary"}
                             style={{width: 200}}
+                            
                         >
                             {isLogin ? "Войти" : "Зарегистрироваться"}
                         </Button>
