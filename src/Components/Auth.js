@@ -1,16 +1,27 @@
 import React from "react";
-import {
-    Button,
-    Card,
-    Container,
-    Form,
-    InputGroup,
-    Row,
-} from "react-bootstrap";
+import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
-import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../utils/constants";
+import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
+import { registrateUser } from "../utils/API/registration";
 
 const Auth = () => {
+    const sendRegistrationToServer = (event) => {
+        event.preventDefault();
+        const userEmail = document.querySelector("#enteredEmail");
+        const userPassword = document.querySelector("#enteredPassword");
+        const authForm = document.querySelector("#form");
+        console.log(userEmail.value, userPassword.value);
+        registrateUser(userEmail.value, userPassword.value);
+        authForm.reset();
+    };
+
+    const sendAuthToServer = (event) => {
+        const authForm = document.querySelector("#form");
+        event.preventDefault();
+        console.log("Auth");
+        authForm.reset();
+    };
+
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
     return (
@@ -22,12 +33,14 @@ const Auth = () => {
                 <h2 className="ml-auto">
                     {isLogin ? "Авторизация" : "Регистрация"}
                 </h2>
-                <Form className="d-flex flex-column">
+                <Form className="d-flex flex-column" id="form">
                     <Form.Control
+                        id="enteredEmail"
                         className="mt-3"
                         placeholder="Введите email"
                     />
                     <Form.Control
+                        id="enteredPassword"
                         className="mt-3"
                         placeholder="Введите пароль"
                     />
@@ -46,13 +59,17 @@ const Auth = () => {
                             </Container>
                         )}
                         <Button
-                        active
+                            active
                             size="sm"
                             type="submit"
                             className={"mt-3 align-self-center btl-light"}
                             variant={"btn-outline-secondary"}
-                            style={{width: 200}}
-                            
+                            style={{ width: 200 }}
+                            onClick={
+                                isLogin
+                                    ? sendAuthToServer
+                                    : sendRegistrationToServer
+                            }
                         >
                             {isLogin ? "Войти" : "Зарегистрироваться"}
                         </Button>
