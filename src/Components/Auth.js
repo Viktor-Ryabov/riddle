@@ -5,13 +5,20 @@ import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
 
 const Auth = () => {
-    const sendToserver = (event) => {
+    const sendRegistrationToServer = (event) => {
         event.preventDefault();
         const userEmail = document.querySelector("#enteredEmail");
         const userPassword = document.querySelector("#enteredPassword");
         const authForm = document.querySelector("#form");
         console.log(userEmail.value, userPassword.value);
         registrateUser(userEmail.value, userPassword.value);
+        authForm.reset();
+    };
+
+    const sendAuthToServer = (event) => {
+        const authForm = document.querySelector("#form");
+        event.preventDefault();
+        console.log("Auth");
         authForm.reset();
     };
 
@@ -58,7 +65,11 @@ const Auth = () => {
                             className={"mt-3 align-self-center btl-light"}
                             variant={"btn-outline-secondary"}
                             style={{ width: 200 }}
-                            onClick={sendToserver}
+                            onClick={
+                                isLogin
+                                    ? sendAuthToServer
+                                    : sendRegistrationToServer
+                            }
                         >
                             {isLogin ? "Войти" : "Зарегистрироваться"}
                         </Button>
