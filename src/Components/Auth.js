@@ -3,6 +3,7 @@ import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
+import { authorizeUser } from "../utils/API/authUser";
 
 const Auth = () => {
     const sendRegistrationToServer = (event) => {
@@ -18,8 +19,11 @@ const Auth = () => {
     };
 
     const sendAuthToServer = (event) => {
+        const userEmail = document.querySelector("#enteredEmail").value;
+        const userPassword = document.querySelector("#enteredPassword").value;
         const authForm = document.querySelector("#form");
         event.preventDefault();
+        authorizeUser(userEmail, userPassword);
         console.log("Auth");
         authForm.reset();
     };

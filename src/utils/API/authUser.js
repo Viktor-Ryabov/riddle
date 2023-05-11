@@ -1,18 +1,22 @@
-import { AUTH_URL } from "../../constants/routeConstants";
+import { BASE_URL } from "../../constants/routeConstants";
 
-const authorizeUserRequestOptions = (userEmail, userPassword) => {
-    return({
+const authorizeUserRequestOptions = (data) => {
+    return {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            email: userEmail,
-            password: userPassword,
-        }),
-    });
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data
+    };
 };
 
 export const authorizeUser = (userEmail, userPassword) => {
-    fetch(`${AUTH_URL}?grant_type=password&username=${userEmail}&password=${userPassword}`, authorizeUserRequestOptions(userEmail, userPassword))
+    const data = new URLSearchParams();
+    data.append("grant_type", "password");
+    data.append("username", `${userEmail}`);
+    data.append("password", `${userPassword}`);
+    fetch(
+        `${BASE_URL}/oauth/token?`,
+        authorizeUserRequestOptions()
+    )
         .then((response) => response.json())
         .then((response) => console.log(response));
 };
