@@ -1,5 +1,4 @@
 import Styles from "./PersonalPage.module.css";
-import ActionButton from "../../UI/ActionButton/ActionButton.js";
 
 
 const PersonalPage = () => {
