@@ -6,12 +6,14 @@ import { registrateUser } from "../utils/API/registration";
 
 const Auth = () => {
     const sendRegistrationToServer = (event) => {
-        event.preventDefault();
-        const userEmail = document.querySelector("#enteredEmail");
-        const userPassword = document.querySelector("#enteredPassword");
+        //get form data
+        const userEmail = document.querySelector("#enteredEmail").value;
+        const userPassword = document.querySelector("#enteredPassword").value;
         const authForm = document.querySelector("#form");
-        console.log(userEmail.value, userPassword.value);
-        registrateUser(userEmail.value, userPassword.value);
+        //register
+        event.preventDefault();
+        console.log(userEmail, userPassword);
+        registrateUser(userEmail, userPassword);
         authForm.reset();
     };
 

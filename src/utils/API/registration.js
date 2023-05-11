@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants/routeConstants";
+import { REGISTRATION_URL } from "../../constants/routeConstants";
 
 const registrateUserRequestOptions = (userEmail, userPassword) => {
     return({
@@ -12,7 +12,8 @@ const registrateUserRequestOptions = (userEmail, userPassword) => {
 };
 
 export const registrateUser = (userEmail, userPassword) => {
-    fetch(`${BASE_URL}/api/user/registration`, registrateUserRequestOptions(userEmail, userPassword))
+    fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(userEmail, userPassword))
         .then((response) => response.json())
         .then((response) => console.log(response));
 };
+

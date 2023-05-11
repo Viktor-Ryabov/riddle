@@ -1,7 +1,6 @@
 import "./Main.css";
 import { withModal } from "../../hoc/withModal.js";
-import { useDispatch, useSelector } from "react-redux";
-import ActionButton from "../../UI/ActionButton/ActionButton.js";
+import { useSelector } from "react-redux";
 import RegistrationPopup from "../../Modules/RegistrationPopup/RegistrationPopup";
 import EnteryForm from "../../Modules/EnteryForm/EnteryForm";
 
@@ -10,14 +9,6 @@ const WithModalEntery = withModal(EnteryForm);
 
 const Main = () => {
     const state = useSelector((state) => state);
-    const dispatch = useDispatch();
-
-    const setRegistrationModalActive = () => {
-        dispatch({type: "REGISTRATION_POPUP_ACTIVE"});
-    };
-    const setEnteryModalActive = () => {
-        dispatch({type: "ENTERY_POPUP_ACTIVE"});
-    };
 
     return (
         <>
