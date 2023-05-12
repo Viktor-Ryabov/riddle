@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 
 const Auth = () => {
 
+
     const dispatch = useDispatch();
 
     const sendRegistrationToServer = (event) => {
@@ -28,7 +29,6 @@ const Auth = () => {
         const authForm = document.querySelector("#form");
         event.preventDefault();
         authorizeUser(userEmail, userPassword, dispatch);
-        console.log("Auth");
         authForm.reset();
     };
 

@@ -20,6 +20,7 @@ export const defaultState = {
         answer: "...",
     },
     userState: {
+        isAuth: false,
         userName: "",
     },
 };

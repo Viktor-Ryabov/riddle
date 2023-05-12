@@ -20,7 +20,7 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
     )
         .then((response) => response.json())
         .then((data) =>
-            dispatch({ type: "GET_USER", payload: data.access_token })
+            dispatch({ type: "GET_USER", payload: data.access_token? true : false })
         )
         .then((result) => console.log(result))
         .catch((error) => console.log("error", error));
