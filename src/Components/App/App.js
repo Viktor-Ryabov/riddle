@@ -14,21 +14,6 @@ import Header from "../Header/Header";
 import Rules from "../../Pages/Rules/Rules";
 import Auth from "../Auth";
 
-// const requestOptions = {
-//     method: 'POST',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify({
-//         email: "testRiddle2@mail.ru",
-//         password: "123456",
-//     })
-// };
-
-// let promice = () => {
-//     fetch("http://localhost:7000/api/user/registration", requestOptions)
-//         .then((response) => response.json())
-//         .then((response) => console.log(response));
-// };
-
 function App() {
     return (
         <Provider store={store}>

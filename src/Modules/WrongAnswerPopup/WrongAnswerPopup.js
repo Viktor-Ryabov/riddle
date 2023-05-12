@@ -16,7 +16,7 @@ const WrongAnswerPopup = () => {
                     className={Styles.button}
                     type="send"
                     onClick={() => {
-                        dispatch({ type: "WRONG_ANSWER_DISABLED" });
+                        dispatch({ type: "ALL_MODAL_DISABLED" });
                     }}
                 >
                     ок, подумаю ещё

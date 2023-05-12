@@ -16,9 +16,9 @@ const Riddle1 = () => {
 
     return (
         <>
-            <WithModalQuestion active={state.questionNotiseActive} />
-            <WithModalWrongAnswer active={state.wronAnswerNoticeActive} />
-            <WithModalRightAnswer active={state.rightAnswerNotiseActive} />
+            <WithModalQuestion active={state.noticeActive.questionNotiseActive} />
+            <WithModalWrongAnswer active={state.noticeActive.wronAnswerNoticeActive} />
+            <WithModalRightAnswer active={state.noticeActive.rightAnswerNotiseActive} />
             <section className={Styles.Riddle1_header}>
                 <p className={Styles.text}>оэяма</p>
                 <p className={Styles.text}>Цезарь  3 -></p>

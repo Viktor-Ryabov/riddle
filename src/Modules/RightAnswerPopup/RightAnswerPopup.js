@@ -10,7 +10,6 @@ const RightAnswerPopup = () => {
 
     const numrebQuestionPage = useSelector((state) => state.numberOfCurrentQuestion);
     console.log(numrebQuestionPage)
-    // console.log(numrebQuestionPage);
 
     const questionPage = (number) => {
         switch (number) {

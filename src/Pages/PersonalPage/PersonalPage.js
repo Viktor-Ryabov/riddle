@@ -1,14 +1,10 @@
 import Styles from "./PersonalPage.module.css";
 
-
-const PersonalPage = () => {
-
+const PersonalPage = (props) => {
     return (
         <>
             <section className={Styles.contacts}>
-                <p className={Styles.title}>Персональная страница пользователя</p>
-                <p>Имя</p>
-                <p>Данные профиля</p>
+                <p className={Styles.title}>Добро пожаловать, {props.name}!</p>
             </section>
         </>
     );
