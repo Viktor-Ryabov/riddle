@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 const RightAnswerPopup = () => {
-    console.log()
 
     const dispatch = useDispatch();
 
     const numrebQuestionPage = useSelector((state) => state.numberOfCurrentQuestion);
-    console.log(numrebQuestionPage)
 
     const questionPage = (number) => {
         switch (number) {
