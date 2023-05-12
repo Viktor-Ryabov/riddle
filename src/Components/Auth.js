@@ -4,8 +4,12 @@ import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
 import { authorizeUser } from "../utils/API/authUser";
+import { useDispatch } from "react-redux";
 
 const Auth = () => {
+
+    const dispatch = useDispatch();
+
     const sendRegistrationToServer = (event) => {
         //get form data
         const userEmail = document.querySelector("#enteredEmail").value;
@@ -23,7 +27,7 @@ const Auth = () => {
         const userPassword = document.querySelector("#enteredPassword").value;
         const authForm = document.querySelector("#form");
         event.preventDefault();
-        authorizeUser(userEmail, userPassword);
+        authorizeUser(userEmail, userPassword, dispatch);
         console.log("Auth");
         authForm.reset();
     };

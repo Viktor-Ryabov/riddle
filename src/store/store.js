@@ -1,4 +1,18 @@
-import { legacy_createStore as createStore } from "redux";
-import { answerReducer } from "../reducers/answerReducer";
+import { legacy_createStore as createStore, applyMiddleware} from 'redux';
+import { rootReducer } from '../reducers/rootReducer';
+import thunk from "redux-thunk";
+import { compose } from "redux";
 
-export const store = createStore(answerReducer);
+const composeEnhancers =
+    typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
+        : compose;
+
+const actionLoger = store => next => action => {
+    console.log(`Action: ${action.type}`);
+    console.log(store);
+    return next(action);
+};
+
+const enhancer = composeEnhancers(applyMiddleware(thunk, actionLoger));
+export const store = createStore(rootReducer, enhancer);
