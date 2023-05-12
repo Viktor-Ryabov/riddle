@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/riddle/static/css/main.25f7579e.css",
-    "main.js": "/riddle/static/js/main.3dbf9569.js",
-    "static/js/787.7ed4f30b.chunk.js": "/riddle/static/js/787.7ed4f30b.chunk.js",
-    "static/media/wollenWirBrannenSVG.svg": "/riddle/static/media/wollenWirBrannenSVG.5584994f87c120d00cf9.svg",
-    "static/media/icons8-whatsapp-64.svg": "/riddle/static/media/icons8-whatsapp-64.2ac67242ce2b79c622663ef1ee561776.svg",
-    "static/media/vk_black_logo.svg": "/riddle/static/media/vk_black_logo.faec130fd96b6499f7237dc0a9abb4bd.svg",
-    "static/media/QL_white.svg": "/riddle/static/media/QL_white.c98e82becdd4f01d1eed12a9a5acc6b0.svg",
-    "static/media/phone-symbol.svg": "/riddle/static/media/phone-symbol.1edc775dae71f0303a26b6b37491a519.svg",
-    "static/media/profile_user_account_icon_white.svg": "/riddle/static/media/profile_user_account_icon_white.d064c353e38fa36a00b47f7fd89e0a7d.svg",
-    "index.html": "/riddle/index.html",
-    "static/media/telegram_icon.svg": "/riddle/static/media/telegram_icon.ac3c315964511863f57eff2a516e1d52.svg",
-    "main.25f7579e.css.map": "/riddle/static/css/main.25f7579e.css.map",
-    "main.3dbf9569.js.map": "/riddle/static/js/main.3dbf9569.js.map",
-    "787.7ed4f30b.chunk.js.map": "/riddle/static/js/787.7ed4f30b.chunk.js.map"
+    "main.css": "/static/css/main.c2cf2e38.css",
+    "main.js": "/static/js/main.a091a580.js",
+    "static/js/787.7ed4f30b.chunk.js": "/static/js/787.7ed4f30b.chunk.js",
+    "static/media/wollenWirBrannenSVG.svg": "/static/media/wollenWirBrannenSVG.5584994f87c120d00cf9.svg",
+    "static/media/icons8-whatsapp-64.svg": "/static/media/icons8-whatsapp-64.2ac67242ce2b79c622663ef1ee561776.svg",
+    "static/media/vk_black_logo.svg": "/static/media/vk_black_logo.faec130fd96b6499f7237dc0a9abb4bd.svg",
+    "static/media/QL_white.svg": "/static/media/QL_white.c98e82becdd4f01d1eed12a9a5acc6b0.svg",
+    "static/media/phone-symbol.svg": "/static/media/phone-symbol.1edc775dae71f0303a26b6b37491a519.svg",
+    "static/media/profile_user_account_icon_white.svg": "/static/media/profile_user_account_icon_white.d064c353e38fa36a00b47f7fd89e0a7d.svg",
+    "index.html": "/index.html",
+    "static/media/telegram_icon.svg": "/static/media/telegram_icon.ac3c315964511863f57eff2a516e1d52.svg",
+    "main.c2cf2e38.css.map": "/static/css/main.c2cf2e38.css.map",
+    "main.a091a580.js.map": "/static/js/main.a091a580.js.map",
+    "787.7ed4f30b.chunk.js.map": "/static/js/787.7ed4f30b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.25f7579e.css",
-    "static/js/main.3dbf9569.js"
+    "static/css/main.c2cf2e38.css",
+    "static/js/main.a091a580.js"
   ]
 }
