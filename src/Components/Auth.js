@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
 import { authorizeUser } from "../utils/API/authUser";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Auth = () => {
+    const userAuthState = useSelector((state) => state.userState.isAuth);
 
+    const printUserAuth = () => {
+        if (userAuthState) {
+            console.log(`Пользовватель авторизован, ${userAuthState}`);
+        } else {
+            console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
+        }
+    };
 
     const dispatch = useDispatch();
 
@@ -34,6 +42,7 @@ const Auth = () => {
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
+    printUserAuth();
     return (
         <Container
             className="d-flex justify-content-center align-items-center"

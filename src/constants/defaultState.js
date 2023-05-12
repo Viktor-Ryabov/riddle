@@ -21,6 +21,6 @@ export const defaultState = {
     },
     userState: {
         isAuth: false,
-        userName: "",
+        userName: null,
     },
 };

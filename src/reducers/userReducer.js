@@ -7,6 +7,11 @@ export const userReducer = (state = defaultState.userState, action) => {
                 ...state,
                 userName: action.payload,
             };
+        case "AUTH_USER":
+            return {
+                ...state,
+                isAuth: action.payload,
+            };
         default:
             return state;
     }
