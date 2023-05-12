@@ -14,14 +14,23 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
         body: raw,
         redirect: "follow",
     };
+
     fetch(
         `${BASE_URL}/oauth/token?grant_type=password&username=${userEmail}&password=${userPassword}`,
         requestOptions
     )
         .then((response) => response.json())
+
         .then((data) =>
-            dispatch({ type: "GET_USER", payload: data.access_token? true : false })
+            window.localStorage.setItem("access_token", data.access_token)
         )
-        .then((result) => console.log(result))
+        .then(() =>
+            dispatch({
+                type: "AUTH_USER",
+                payload: window.localStorage.getItem("access_token")
+                    ? true
+                    : false,
+            })
+        )
         .catch((error) => console.log("error", error));
 };

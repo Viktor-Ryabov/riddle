@@ -15,6 +15,7 @@ import Rules from "../../Pages/Rules/Rules";
 import Auth from "../Auth";
 
 function App() {
+    
     return (
         <Provider store={store}>
             <div className="App">
