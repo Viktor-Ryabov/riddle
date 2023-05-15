@@ -1,7 +1,5 @@
 import { BASE_URL } from "../../constants/routeConstants";
 
-// const dispatch = useDispatch();
-
 export const authorizeUser = (userEmail, userPassword, dispatch) => {
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
@@ -24,6 +22,7 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
         .then((data) =>
             window.localStorage.setItem("access_token", data.access_token)
         )
+        .then(() => console.log(window.localStorage.getItem("access_token")))
         .then(() =>
             dispatch({
                 type: "AUTH_USER",
