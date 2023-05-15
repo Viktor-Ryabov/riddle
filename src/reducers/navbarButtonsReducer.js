@@ -14,6 +14,7 @@ export const navbarButtonsReducer = (
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
                 navbarButton_Rules: false,
+                navbarButton_user: false,
             };
         case "SET_ABOUT_ACTIVE":
             return {
@@ -24,6 +25,7 @@ export const navbarButtonsReducer = (
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
                 navbarButton_Rules: false,
+                navbarButton_user: false,
             };
         case "SET_CONTACTS_ACTIVE":
             return {
@@ -34,6 +36,7 @@ export const navbarButtonsReducer = (
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
                 navbarButton_Rules: false,
+                navbarButton_user: false,
             };
         case "SET_RULES_ACTIVE":
             return {
@@ -44,6 +47,7 @@ export const navbarButtonsReducer = (
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: false,
                 navbarButton_Rules: true,
+                navbarButton_user: false,
             };
         case "SET_QUESTION_PAGE_ACTIVE":
             return {
@@ -54,6 +58,18 @@ export const navbarButtonsReducer = (
                 navbarButton_Registration: false,
                 navbarButton_QuestionPage: true,
                 navbarButton_Rules: false,
+                navbarButton_user: false,
+            };
+        case "SET_USER_PAGE_ACTIVE":
+            return {
+                ...state,
+                navbarButton_Main: false,
+                navbarButton_About: false,
+                navbarButton_Contacts: false,
+                navbarButton_Registration: false,
+                navbarButton_QuestionPage: false,
+                navbarButton_Rules: false,
+                navbarButton_user: true,
             };
         case "SET_ALL_PAGES_DISABLED":
             return {

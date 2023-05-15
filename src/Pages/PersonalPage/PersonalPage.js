@@ -4,7 +4,7 @@ const PersonalPage = (props) => {
     return (
         <>
             <section className={Styles.contacts}>
-                <p className={Styles.title}>Добро пожаловать, {props.name}!</p>
+                <p className={Styles.title}>Добро пожаловать! {props.name}!</p>
             </section>
         </>
     );

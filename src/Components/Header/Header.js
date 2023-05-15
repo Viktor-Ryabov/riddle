@@ -1,11 +1,10 @@
-// import { useState } from "react";
 import Styles from "./Header.module.css";
 import Contacts from "./Modules/Contasts/Contacts.js";
 import LogoSection from "./Modules/LogoSection/LogoSection.js";
 import CurrentTaskButton from "./Modules/CurrentTaskButton/CurrentTaskButton.js";
 import profileLogo from "../../images/profile_user_account_icon_white.svg";
-import { ContaktLink } from "./UI/ContaktLink/ContaktLink";
 import Navbar from "./Modules/Navbar/Navbar";
+import { UserPageLink } from "./UI/UserPagelink/UserPageLink";
 
 const Header = () => {
     return (
@@ -13,8 +12,8 @@ const Header = () => {
             <div className={Styles.borderBlock}>
                 <LogoSection size="" type="SET_MAIN_ACTIVE"/>
                 <Contacts />
-                <ContaktLink src={profileLogo} to="/personal_page" type="SET_ALL_PAGES_DISABLED"/>
-                <CurrentTaskButton type="SET_ALL_PAGES_DISABLED"/>
+                <UserPageLink src={profileLogo} to="/user" type="SET_USER_PAGE_ACTIVE"/>
+                <CurrentTaskButton type="SET_QUESTION_PAGE_ACTIVE"/>
             </div>
             <Navbar />
         </section>

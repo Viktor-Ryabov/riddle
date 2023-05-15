@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Styles from "./ContaktLink.module.css";
+import Styles from "./UserPageLink.module.css";
 
-export const ContaktLink = (props) => {
+export const UserPageLink = (props) => {
     return (
         <Link
             to={props.to}

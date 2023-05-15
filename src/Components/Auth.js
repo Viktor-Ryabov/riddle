@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
@@ -20,7 +20,8 @@ const Auth = () => {
     const dispatch = useDispatch();
 
     const sendRegistrationToServer = (event) => {
-        //get form data
+        //get form datawas loaded over HTTPSgthtdjl
+        
         const userEmail = document.querySelector("#enteredEmail").value;
         const userPassword = document.querySelector("#enteredPassword").value;
         const authForm = document.querySelector("#form");
@@ -43,6 +44,7 @@ const Auth = () => {
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
     printUserAuth();
+
     return (
         <Container
             className="d-flex justify-content-center align-items-center"
