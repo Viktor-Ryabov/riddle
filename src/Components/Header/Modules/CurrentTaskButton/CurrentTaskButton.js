@@ -8,7 +8,7 @@ const CurrentTaskButton = (props) => {
         dispatch({ type: `${props.type}` })
     }
     return (
-        <Link to="/first" className={Styles.button}>
+        <Link to="/question" className={Styles.button}>
             <button
                 className={Styles.title}
                 onClick={setDispatch}

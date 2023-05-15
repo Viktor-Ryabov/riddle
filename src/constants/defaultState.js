@@ -12,6 +12,7 @@ export const defaultState = {
         navbarButton_Registration: false,
         navbarButton_QuestionPage: false,
         navbarButton_rules: false,
+        navbarButton_user: false,
     },
     answers: {
         numberOfCurrentQuestion: 1,

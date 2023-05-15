@@ -1,20 +1,18 @@
 import React from "react";
 import Styles from "./Contacts.module.css";
 import { ContaktLink } from "../../UI/ContaktLink/ContaktLink.js";
-import { ContactsBank } from "../../constants/ContactsBank.js";
+import { ContactsBank } from "../../constants/ContactsBank";
 
 const Contacts = () => {
     return (
         <div className={Styles.contacts}>
-            {ContactsBank.map((contactItem) => (
                 <ContaktLink
-                    href={contactItem.href}
-                    src={contactItem.icon}
-                    alt={contactItem.linkName}
-                    text={contactItem.text}
-                    key={contactItem.id}
+                    href={ContactsBank.href}
+                    src={ContactsBank.icon}
+                    alt={ContactsBank.linkName}
+                    text={ContactsBank.text}
+                    key={ContactsBank.id}
                 />
-            ))}
         </div>
     );
 };

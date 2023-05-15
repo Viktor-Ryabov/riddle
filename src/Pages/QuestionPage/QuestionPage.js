@@ -4,7 +4,7 @@ const QuestionPage = () => {
     return (
         <>
             <section className="about">
-                <p className="title">О нас</p>
+                <p className="title">QuestionPage </p>
                 <p>QuestionPage</p>
             </section>
         </>
