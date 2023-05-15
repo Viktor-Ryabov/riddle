@@ -5,6 +5,7 @@ import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
 import { authorizeUser } from "../utils/API/authUser";
 import { useDispatch, useSelector } from "react-redux";
+import useInput from "../utils/useInput";
 
 const Auth = () => {
     const userAuthState = useSelector((state) => state.userState.isAuth);
@@ -45,6 +46,8 @@ const Auth = () => {
     const isLogin = location.pathname === LOGIN_ROUTE;
     printUserAuth();
 
+    const nikName = useInput('');
+
     return (
         <Container
             className="d-flex justify-content-center align-items-center"
@@ -55,6 +58,16 @@ const Auth = () => {
                     {isLogin ? "Авторизация" : "Регистрация"}
                 </h2>
                 <Form className="d-flex flex-column" id="form">
+                    <Form.Control
+                        onChange={(e) => nikName.onChange(e)}
+                        onBlur={(e) => nikName.onBlur(e)}
+                        value={nikName.value}
+                        name='nikName'
+                        type='text'
+                        id="enteredNik"
+                        className="mt-3"
+                        placeholder="Введите Nikname"
+                    />
                     <Form.Control
                         id="enteredEmail"
                         className="mt-3"
