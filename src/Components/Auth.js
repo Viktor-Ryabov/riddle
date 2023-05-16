@@ -11,13 +11,13 @@ import useInput from "../utils/useInput";
 const Auth = () => {
     const userAuthState = useSelector((state) => state.userState.isAuth);
 
-    // const printUserAuth = () => {
-    //     if (userAuthState) {
-    //         console.log(`Пользовватель авторизован, ${userAuthState}`);
-    //     } else {
-    //         console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
-    //     }
-    // };
+    const printUserAuth = () => {
+        if (userAuthState) {
+            console.log(`Пользовватель авторизован, ${userAuthState}`);
+        } else {
+            console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
+        }
+    };
 
     const dispatch = useDispatch();
 
@@ -45,7 +45,7 @@ const Auth = () => {
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
-    // printUserAuth();
+    printUserAuth();
 
     const nikNameValidation = useInput("", { isEmpty: true, minLength: 3 });
     const emailValidation = useInput("", { isEmpty: true, emailError: true });
