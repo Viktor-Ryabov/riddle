@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from "./Auth.module.css";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
@@ -10,19 +11,19 @@ import useInput from "../utils/useInput";
 const Auth = () => {
     const userAuthState = useSelector((state) => state.userState.isAuth);
 
-    const printUserAuth = () => {
-        if (userAuthState) {
-            console.log(`Пользовватель авторизован, ${userAuthState}`);
-        } else {
-            console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
-        }
-    };
+    // const printUserAuth = () => {
+    //     if (userAuthState) {
+    //         console.log(`Пользовватель авторизован, ${userAuthState}`);
+    //     } else {
+    //         console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
+    //     }
+    // };
 
     const dispatch = useDispatch();
 
     const sendRegistrationToServer = (event) => {
         //get form datawas loaded over HTTPSgthtdjl
-        
+
         const userEmail = document.querySelector("#enteredEmail").value;
         const userPassword = document.querySelector("#enteredPassword").value;
         const authForm = document.querySelector("#form");
@@ -44,9 +45,11 @@ const Auth = () => {
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
-    printUserAuth();
+    // printUserAuth();
 
-    const nikName = useInput('');
+    const nikNameValidation = useInput("", { isEmpty: true, minLength: 3 });
+    const emailValidation = useInput("", { isEmpty: true, emailError: true });
+    const passwordValidation = useInput("", { isEmpty: true, minLength: 5 });
 
     return (
         <Container
@@ -58,26 +61,99 @@ const Auth = () => {
                     {isLogin ? "Авторизация" : "Регистрация"}
                 </h2>
                 <Form className="d-flex flex-column" id="form">
-                    <Form.Control
-                        onChange={(e) => nikName.onChange(e)}
-                        onBlur={(e) => nikName.onBlur(e)}
-                        value={nikName.value}
-                        name='nikName'
-                        type='text'
-                        id="enteredNik"
-                        className="mt-3"
-                        placeholder="Введите Nikname"
-                    />
-                    <Form.Control
-                        id="enteredEmail"
-                        className="mt-3"
-                        placeholder="Введите email"
-                    />
-                    <Form.Control
-                        id="enteredPassword"
-                        className="mt-3"
-                        placeholder="Введите пароль"
-                    />
+                    <Container>
+                        <Form.Control
+                            className={Styles.input}
+                            onChange={(e) => nikNameValidation.onChange(e)}
+                            onBlur={(e) => nikNameValidation.onBlur(e)}
+                            value={nikNameValidation.value}
+                            name="nikName"
+                            type="text"
+                            id="enteredNik"
+                            className="mt-3"
+                            placeholder="Введите Nikname"
+                        />
+                        {nikNameValidation.isDirty &&
+                            nikNameValidation.isEmpty && (
+                                <div
+                                    className={Styles.authErrorMassage}
+                                    style={{ color: "red" }}
+                                >
+                                    Поле не может быть пустым
+                                </div>
+                            )}
+                        {nikNameValidation.isDirty &&
+                            nikNameValidation.minLengthError && (
+                                <div
+                                    className={Styles.authErrorMassage}
+                                    style={{ color: "red" }}
+                                >
+                                    Имя должно быть длинее 3 символов
+                                </div>
+                            )}
+                    </Container>
+
+                    <Container>
+                        <Form.Control
+                            onChange={(e) => emailValidation.onChange(e)}
+                            onBlur={(e) => emailValidation.onBlur(e)}
+                            value={emailValidation.value}
+                            name="email"
+                            type="email"
+                            id="enteredEmail"
+                            className="mt-3"
+                            placeholder="Введите email"
+                        />
+                        {emailValidation.isDirty && emailValidation.isEmpty && (
+                            <div
+                                className={Styles.authErrorMassage}
+                                style={{ color: "red" }}
+                            >
+                                Поле не может быть пустым
+                            </div>
+                        )}
+                        {emailValidation.isDirty &&
+                            emailValidation.emailError && (
+                                <div
+                                    className={Styles.authErrorMassage}
+                                    style={{ color: "red" }}
+                                >
+                                    Не корректный Email
+                                </div>
+                            )}
+                    </Container>
+
+                    <Container>
+                        <Form.Control
+                            className={Styles.input}
+                            onChange={(e) => passwordValidation.onChange(e)}
+                            onBlur={(e) => passwordValidation.onBlur(e)}
+                            value={passwordValidation.value}
+                            name="password"
+                            type="text"
+                            id="enteredPassword"
+                            className="mt-3"
+                            placeholder="Введите пароль"
+                        />
+                        {passwordValidation.isDirty &&
+                            passwordValidation.isEmpty && (
+                                <div
+                                    className={Styles.authErrorMassage}
+                                    style={{ color: "red" }}
+                                >
+                                    Поле не может быть пустым
+                                </div>
+                            )}
+                        {passwordValidation.isDirty &&
+                            passwordValidation.minLength && (
+                                <div
+                                    className={Styles.authErrorMassage}
+                                    style={{ color: "red" }}
+                                >
+                                    Пароль должен быть длинее 5 символов
+                                </div>
+                            )}
+                    </Container>
                     <Container className="d-flex flex-column mt-3 pl-3 pr-3">
                         {isLogin ? (
                             <Container className="d-flex flex-column mt-3 pl-3 pr-3">

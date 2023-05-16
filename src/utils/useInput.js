@@ -1,20 +1,29 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useValidation = (value, validations) => {
     const [isEmpty, setEmpty] = useState(true);
-    const [minLengthError, setMinlengthError] = useState(false);
+    const [minLengthError, setMinLengthError] = useState(false);
+    const [emailError, setEmailError] = useState(false);
 
     useEffect(() => {
         for (const validation in validations) {
             switch (validation) {
-                case "minlength":
+                case "minLength":
                     value.length < validations[validation]
-                            ? setMinlengthError(true)
-                            : setMinlengthError(false);
+                        ? setMinLengthError(true)
+                        : setMinLengthError(false);
                     break;
                 case "isEmpty":
                     value ? setEmpty(false) : setEmpty(true);
                     break;
+                case "emailError":
+                    const atLocation = value.lastIndexOf("@");
+                    const dotLocation = value.lastIndexOf(".");
+                    atLocation > 0 &&
+                    dotLocation > atLocation + 1 &&
+                    dotLocation < value.length - 1
+                        ? setEmailError(false)
+                        : setEmailError(true);
             }
         }
     }, [value]);
@@ -22,12 +31,14 @@ const useValidation = (value, validations) => {
     return {
         isEmpty,
         minLengthError,
-    }
+        emailError,
+    };
 };
 
-const useInput = (initialValue) => {
+const useInput = (initialValue, validations) => {
     const [value, setValue] = useState(initialValue);
     const [isDirty, setDirty] = useState(false);
+    const valid = useValidation(value, validations);
 
     const onChange = (e) => {
         setValue(e.target.value);
@@ -41,6 +52,8 @@ const useInput = (initialValue) => {
         value,
         onChange,
         onBlur,
+        isDirty,
+        ...valid,
     };
 };
 
