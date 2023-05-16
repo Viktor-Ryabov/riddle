@@ -5,19 +5,19 @@ import { useLocation, NavLink } from "react-router-dom";
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from "../constants/routeConstants";
 import { registrateUser } from "../utils/API/registration";
 import { authorizeUser } from "../utils/API/authUser";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import useInput from "../utils/useInput";
 
 const Auth = () => {
-    const userAuthState = useSelector((state) => state.userState.isAuth);
+    // const userAuthState = useSelector((state) => state.userState.isAuth);
 
-    const printUserAuth = () => {
-        if (userAuthState) {
-            console.log(`Пользовватель авторизован, ${userAuthState}`);
-        } else {
-            console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
-        }
-    };
+    // const printUserAuth = () => {
+    //     if (userAuthState) {
+    //         console.log(`Пользовватель авторизован, ${userAuthState}`);
+    //     } else {
+    //         console.log(`Пользовватель NOT авторизован, ${userAuthState}`);
+    //     }
+    // };
 
     const dispatch = useDispatch();
 
@@ -45,7 +45,7 @@ const Auth = () => {
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
-    printUserAuth();
+    // printUserAuth();
 
     const nikNameValidation = useInput("", { isEmpty: true, minLength: 3 });
     const emailValidation = useInput("", { isEmpty: true, emailError: true });
@@ -171,6 +171,7 @@ const Auth = () => {
                         <Button
                             active
                             size="sm"
+                            disabled={!nikNameValidation.inputValid || !emailValidation.inputValid || !passwordValidation.inputValid}
                             type="submit"
                             className={"mt-3 align-self-center btl-light"}
                             variant={"btn-outline-secondary"}

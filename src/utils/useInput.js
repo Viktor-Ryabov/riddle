@@ -4,6 +4,8 @@ const useValidation = (value, validations) => {
     const [isEmpty, setEmpty] = useState(true);
     const [minLengthError, setMinLengthError] = useState(false);
     const [emailError, setEmailError] = useState(false);
+    const [inputValid, setInputValid] = useState(false);
+    
 
     useEffect(() => {
         for (const validation in validations) {
@@ -28,10 +30,21 @@ const useValidation = (value, validations) => {
         }
     }, [value]);
 
+    useEffect (() => {
+
+        if(isEmpty || minLengthError || emailError){
+            setInputValid(false)
+        } else {
+            setInputValid(true)
+        }
+
+    }, [isEmpty, minLengthError, emailError])
+
     return {
         isEmpty,
         minLengthError,
         emailError,
+        inputValid,
     };
 };
 
