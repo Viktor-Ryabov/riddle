@@ -13,6 +13,7 @@ import useInput from "../../utils/useInput";
 import { withModal } from "../../hoc/withModal";
 import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
 import { getUserRegistrationData } from "../../services/actions/getUserRegistrationData";
+import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
 
@@ -28,8 +29,11 @@ const setUserDataToStore = (dispatch) => {
 };
 
 const Auth = () => {
+
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
+
+    console.log(state);
 
     const dispatch = useDispatch();
 
@@ -38,6 +42,7 @@ const Auth = () => {
         setUserDataToStore(dispatch);
         console.log(state.userState.userEmail, state.userState.userPassword);
         registrateUser(state.userState.userEmail, state.userState.userPassword);
+        dispatch({ type: "SUCCESS_REGISTRATION_POPUP_ACTIVE" });
         authForm.reset();
     };
 
@@ -46,7 +51,11 @@ const Auth = () => {
             event.preventDefault();
             setUserDataToStore(dispatch);
         }
-        authorizeUser(state.userState.userEmail, state.userState.userPassword, dispatch);
+        authorizeUser(
+            state.userState.userEmail,
+            state.userState.userPassword,
+            dispatch
+        );
         authForm.reset();
     };
 
@@ -58,7 +67,14 @@ const Auth = () => {
 
     return (
         <>
-            <WithModalSuccessAuth active={state.noticeActive.questionNotiseActive}/>
+            <WithModalSuccessAuth
+                active={state.noticeActive.successRegistrationNotiseActive}
+                makeAuth={authorizeUser(
+                    state.userState.userEmail,
+                    state.userState.userPassword,
+                    dispatch
+                )}
+            />
             <Container
                 className="d-flex justify-content-center align-items-center"
                 style={{ height: window.innerHeight - 80 }}

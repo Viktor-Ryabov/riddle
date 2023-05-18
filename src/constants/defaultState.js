@@ -3,6 +3,7 @@ export const defaultState = {
         wronAnswerNoticeActive: false,
         rightAnswerNotiseActive: false,
         questionNotiseActive: false,
+        successRegistrationNotiseActive: false,
         successAuthNotiseActive: false,
         numberOfCurrentQuestion: 1,
     },

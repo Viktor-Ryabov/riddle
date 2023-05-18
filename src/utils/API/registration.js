@@ -14,7 +14,7 @@ const registrateUserRequestOptions = (userEmail, userPassword) => {
 
 export const registrateUser = (userEmail, userPassword, goTo) => {
     fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(userEmail, userPassword))
-        .then(checkResponse)
+        // .then(checkResponse)
         .then((response) => response.json())
         .then((response) => console.log(response));
 };

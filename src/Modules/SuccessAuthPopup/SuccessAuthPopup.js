@@ -5,18 +5,21 @@ import { Link } from "react-router-dom";
 
 const SuccessAuthPopup = (props) => {
     const dispatch = useDispatch();
-
+    const makeAutoAuth = () => {
+        props.makeAuth();
+        dispatch({ type: "ALL_MODAL_DISABLED" });
+    }
     return (
         <div className={Styles.container}>
             <div className={Styles.inputs}>
-                <div className={Styles.brand_title}>{props.ma}</div>
+                <div className={Styles.brand_title}>Вы зарегистрированы!</div>
 
                 <Link
                     to="/main"
                     className={Styles.button}
                     type="send"
                     onClick={() => {
-                        dispatch({ type: "ALL_MODAL_DISABLED" });
+                        makeAutoAuth();
                     }}
                 >
                     ПОЕХАЛИ!
