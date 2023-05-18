@@ -37,7 +37,7 @@ const AppRouter = () => {
             </Routes>
         );
     }
-    if (!userState) {
+    if (userState !== true) {
         return (
             <Routes>
                 <Route exact path="*" element={<Auth />} />

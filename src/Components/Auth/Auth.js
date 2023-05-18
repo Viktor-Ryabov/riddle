@@ -69,7 +69,7 @@ const Auth = () => {
         <>
             <WithModalSuccessAuth
                 active={state.noticeActive.successRegistrationNotiseActive}
-                makeAuth={authorizeUser(
+                makeAuth={ () => authorizeUser(
                     state.userState.userEmail,
                     state.userState.userPassword,
                     dispatch
