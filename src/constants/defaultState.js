@@ -28,4 +28,10 @@ export const defaultState = {
         isAuth: false,
         userName: null,
     },
+    fetchState: {
+        fetchData: {},
+        fetchMassege: "",
+        fetchError: "",
+        fetchStatus: null,
+    }
 };

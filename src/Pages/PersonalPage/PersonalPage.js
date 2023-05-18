@@ -1,12 +1,11 @@
 import { Button, Card, Container, Form } from "react-bootstrap";
 import Styles from "./PersonalPage.module.css";
+import { Link} from "react-router-dom";
 
 const PersonalPage = (props) => {
     const exitUser = () => {
-        const token = window.localStorage.getItem("access_token");
-        console.log(token)
         window.localStorage.removeItem("access_token");
-        console.log(token)
+        window.location.reload();
     }
 
     return (
@@ -18,7 +17,7 @@ const PersonalPage = (props) => {
                                 variant={"btn-outline-secondary"}
                                 style={{ width: 200 }}
                                 onClick={()=> exitUser()}>
-                    Exit
+                    <Link to="/auth">Exit</Link>
                 </Button>
             </section>
         </>

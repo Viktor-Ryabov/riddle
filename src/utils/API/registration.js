@@ -12,9 +12,9 @@ const registrateUserRequestOptions = (userEmail, userPassword) => {
     });
 };
 
-export const registrateUser = (userEmail, userPassword, goTo) => {
-    fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(userEmail, userPassword))
-        // .then(checkResponse)
+export const sendRegistrationToServer = (state) => {
+    console.log(state.userState.userEmail, state.userState.userPassword)
+    fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(state.userState.userEmail, state.userState.userPassword))
         .then((response) => response.json())
         .then((response) => console.log(response));
 };

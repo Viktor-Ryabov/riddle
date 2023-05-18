@@ -3,7 +3,7 @@ export const checkResponse = (res) => {
         return res.json();
     } else {
         return Promise.reject(
-            `Что-то пошло не так в checkResponse: Ошибка ${res.status} - ${res.statusText}`
+            `Что-то пошло не так в checkResponse: Ошибка ${res.message}`
         );
     }
 };

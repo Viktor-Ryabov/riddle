@@ -15,7 +15,7 @@ const SuccessAuthPopup = (props) => {
                 <div className={Styles.brand_title}>Вы зарегистрированы!</div>
 
                 <Link
-                    to="/main"
+                    to="/user"
                     className={Styles.button}
                     type="send"
                     onClick={() => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Styles from "./Auth.module.css";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
@@ -6,14 +6,12 @@ import {
     LOGIN_ROUTE,
     REGISTRATION_ROUTE,
 } from "../../constants/routeConstants";
-import { registrateUser } from "../../utils/API/registration";
+import { sendRegistrationToServer } from "../../utils/API/registration";
 import { authorizeUser } from "../../utils/API/authUser";
 import { useDispatch, useSelector } from "react-redux";
 import useInput from "../../utils/useInput";
 import { withModal } from "../../hoc/withModal";
 import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
-import { getUserRegistrationData } from "../../services/actions/getUserRegistrationData";
-import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
 
@@ -29,28 +27,21 @@ const setUserDataToStore = (dispatch) => {
 };
 
 const Auth = () => {
-
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
 
-    console.log(state);
-
     const dispatch = useDispatch();
 
-    const sendRegistrationToServer = (event) => {
+    const registrateUser = (event) => {
         event.preventDefault();
         setUserDataToStore(dispatch);
-        console.log(state.userState.userEmail, state.userState.userPassword);
-        registrateUser(state.userState.userEmail, state.userState.userPassword);
+        sendRegistrationToServer(state);
         dispatch({ type: "SUCCESS_REGISTRATION_POPUP_ACTIVE" });
         authForm.reset();
     };
 
     const sendAuthToServer = (event, withRegistration) => {
-        if (!withRegistration) {
-            event.preventDefault();
-            setUserDataToStore(dispatch);
-        }
+        event.preventDefault();
         authorizeUser(
             state.userState.userEmail,
             state.userState.userPassword,
@@ -69,11 +60,13 @@ const Auth = () => {
         <>
             <WithModalSuccessAuth
                 active={state.noticeActive.successRegistrationNotiseActive}
-                makeAuth={ () => authorizeUser(
-                    state.userState.userEmail,
-                    state.userState.userPassword,
-                    dispatch
-                )}
+                makeAuth={() =>
+                    authorizeUser(
+                        state.userState.userEmail,
+                        state.userState.userPassword,
+                        dispatch
+                    )
+                }
             />
             <Container
                 className="d-flex justify-content-center align-items-center"
@@ -117,7 +110,6 @@ const Auth = () => {
 
                         <Container>
                             <Form.Control
-                                className={Styles.input}
                                 onChange={(e) => passwordValidation.onChange(e)}
                                 onBlur={(e) => passwordValidation.onBlur(e)}
                                 value={passwordValidation.value}
@@ -175,9 +167,7 @@ const Auth = () => {
                                 variant={"btn-outline-secondary"}
                                 style={{ width: 200 }}
                                 onClick={
-                                    isLogin
-                                        ? sendAuthToServer
-                                        : sendRegistrationToServer
+                                    isLogin ? sendAuthToServer : registrateUser
                                 }
                             >
                                 {isLogin ? "Войти" : "Зарегистрироваться"}
