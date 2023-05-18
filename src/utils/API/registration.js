@@ -1,4 +1,5 @@
 import { REGISTRATION_URL } from "../../constants/routeConstants";
+import { checkResponse } from "./checkResponse";
 
 const registrateUserRequestOptions = (userEmail, userPassword) => {
     return({
@@ -11,8 +12,9 @@ const registrateUserRequestOptions = (userEmail, userPassword) => {
     });
 };
 
-export const registrateUser = (userEmail, userPassword) => {
+export const registrateUser = (userEmail, userPassword, goTo) => {
     fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(userEmail, userPassword))
+        .then(checkResponse)
         .then((response) => response.json())
         .then((response) => console.log(response));
 };

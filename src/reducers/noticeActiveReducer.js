@@ -30,6 +30,9 @@ export const noticeActiveReducer = (
         case "ENTERY_POPUP_DISABLED":
             return { ...state, enteryPopupActive: false };
 
+        case "SUCCESS_AUTH_POPUP_ACTIVE":
+            return { ...state, successAuthNotiseActive: false };
+
         case "ALL_MODAL_DISABLED":
             return {
                 ...state,
@@ -38,6 +41,7 @@ export const noticeActiveReducer = (
                 rightAnswerNotiseActive: false,
                 registrationPopupActive: false,
                 enteryPopupActive: false,
+                successAuthNotiseActive: false,
             };
 
         default:

@@ -3,6 +3,7 @@ export const defaultState = {
         wronAnswerNoticeActive: false,
         rightAnswerNotiseActive: false,
         questionNotiseActive: false,
+        successAuthNotiseActive: false,
         numberOfCurrentQuestion: 1,
     },
     navbarButtons: {
@@ -21,6 +22,8 @@ export const defaultState = {
         answer: "...",
     },
     userState: {
+        userEmail: "",
+        userPassword: "",
         isAuth: false,
         userName: null,
     },
