@@ -14,7 +14,7 @@ import {
 } from "../constants/routeConstants";
 import QuestionPage from "../Pages/QuestionPage/QuestionPage";
 import Contacts from "../Pages/Contacts/Contacts";
-import Auth from "./Auth";
+import Auth from "./Auth/Auth";
 import PersonalPage from "../Pages/PersonalPage/PersonalPage";
 import Rules from "../Pages/Rules/Rules"
 import { useSelector } from "react-redux";
@@ -22,7 +22,7 @@ import { useSelector } from "react-redux";
 const AppRouter = () => {
     const userState = useSelector((state) => state.userState.isAuth);
 
-    console.log(userState);
+    console.log(`user is Auth = ${userState}`);
 
     if (userState) {
         return (
@@ -37,7 +37,7 @@ const AppRouter = () => {
             </Routes>
         );
     }
-    if (!userState) {
+    if (userState !== true) {
         return (
             <Routes>
                 <Route exact path="*" element={<Auth />} />
