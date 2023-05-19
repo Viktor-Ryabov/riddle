@@ -15,32 +15,32 @@ import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
 
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
 
-const setUserDataToStore = (dispatch) => {
-    const userEmail = document.querySelector("#enteredEmail").value;
-    const userPassword = document.querySelector("#enteredPassword").value;
-
-    dispatch({
-        type: "GET_USER_REGISTRATION_DATA",
-        userEmail: userEmail,
-        userPassword: userPassword,
-    });
-};
-
 const Auth = () => {
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
 
+    const inputEmail = document.querySelector("#enteredEmail");
+    const inputPassword = document.querySelector("#enteredPassword");
+    let userInputData ={};
+
+    const getUserInputData = (event) => {
+        event.preventDefault();
+        return userInputData = {
+            userEmail: inputEmail.value,
+            userPassword: inputPassword.value,
+        }
+    }
+
     const dispatch = useDispatch();
 
-    const registrateUser = (event) => {
-        event.preventDefault();
-        setUserDataToStore(dispatch);
-        sendRegistrationToServer(state);
-        dispatch({ type: "SUCCESS_REGISTRATION_POPUP_ACTIVE" });
+    const registrateUser = async function() {
+        getUserInputData();
+        console.log(userInputData)
+        await sendRegistrationToServer(userInputData.userEmail, userInputData.userPassword)
         authForm.reset();
     };
 
-    const sendAuthToServer = (event, withRegistration) => {
+    const sendAuthToServer = (event) => {
         event.preventDefault();
         authorizeUser(
             state.userState.userEmail,

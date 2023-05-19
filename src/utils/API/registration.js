@@ -1,5 +1,4 @@
 import { REGISTRATION_URL } from "../../constants/routeConstants";
-import { checkResponse } from "./checkResponse";
 
 const registrateUserRequestOptions = (userEmail, userPassword) => {
     return({
@@ -12,9 +11,8 @@ const registrateUserRequestOptions = (userEmail, userPassword) => {
     });
 };
 
-export const sendRegistrationToServer = (state) => {
-    console.log(state.userState.userEmail, state.userState.userPassword)
-    fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(state.userState.userEmail, state.userState.userPassword))
+export const sendRegistrationToServer = async function (userEmail, userPassword){
+    await fetch(`${REGISTRATION_URL}`, registrateUserRequestOptions(userEmail, userPassword))
         .then((response) => response.json())
         .then((response) => console.log(response));
 };
