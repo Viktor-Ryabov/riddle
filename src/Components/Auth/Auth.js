@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./Auth.module.css";
 import { Button, Card, Container, Form } from "react-bootstrap";
 import { useLocation, NavLink } from "react-router-dom";
@@ -15,18 +15,15 @@ import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
 
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
 
-const setUserDataToStore = (dispatch) => {
-    const userEmail = document.querySelector("#enteredEmail").value;
-    const userPassword = document.querySelector("#enteredPassword").value;
-
-    dispatch({
-        type: "GET_USER_REGISTRATION_DATA",
-        userEmail: userEmail,
-        userPassword: userPassword,
-    });
-};
-
 const Auth = () => {
+
+    const [userState, setUserState] = useState({});
+    useEffect(() => {}, [setUserState]);
+
+    const location = useLocation();
+    const isLogin = location.pathname === LOGIN_ROUTE;
+
+
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
 
@@ -34,24 +31,23 @@ const Auth = () => {
 
     const registrateUser = (event) => {
         event.preventDefault();
-        setUserDataToStore(dispatch);
-        sendRegistrationToServer(state);
-        dispatch({ type: "SUCCESS_REGISTRATION_POPUP_ACTIVE" });
+        const inputEmail = document.querySelector("#enteredEmail").value;
+        const inputPassword = document.querySelector("#enteredPassword").value;
+        sendRegistrationToServer(inputEmail, inputPassword);
+
+        setUserState({inputEmail, inputPassword})
+
+        location.pathname = LOGIN_ROUTE;
         authForm.reset();
     };
 
-    const sendAuthToServer = (event, withRegistration) => {
+    const sendAuthToServer = (event) => {
         event.preventDefault();
-        authorizeUser(
-            state.userState.userEmail,
-            state.userState.userPassword,
-            dispatch
-        );
+        const inputEmail = document.querySelector("#enteredEmail").value;
+        const inputPassword = document.querySelector("#enteredPassword").value;
+        authorizeUser(inputEmail, inputPassword, dispatch);
         authForm.reset();
     };
-
-    const location = useLocation();
-    const isLogin = location.pathname === LOGIN_ROUTE;
 
     const emailValidation = useInput("", { isEmpty: true, emailError: true });
     const passwordValidation = useInput("", { isEmpty: true, minLength: 5 });
@@ -67,6 +63,7 @@ const Auth = () => {
                         dispatch
                     )
                 }
+                text={state.userState.userErrorAuth}
             />
             <Container
                 className="d-flex justify-content-center align-items-center"

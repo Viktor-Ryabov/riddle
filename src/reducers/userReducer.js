@@ -18,6 +18,11 @@ export const userReducer = (state = defaultState.userState, action) => {
                 ...state,
                 isAuth: action.payload,
             };
+        case "ERROR_AUTH_USER":
+            return {
+                ...state,
+                userErrorAuth: action.payload,
+            };
         default:
             return state;
     }

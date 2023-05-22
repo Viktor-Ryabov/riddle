@@ -12,7 +12,7 @@ const SuccessAuthPopup = (props) => {
     return (
         <div className={Styles.container}>
             <div className={Styles.inputs}>
-                <div className={Styles.brand_title}>Вы зарегистрированы!</div>
+                <div className={Styles.brand_title}>{props.text}</div>
 
                 <Link
                     to="/user"
@@ -22,7 +22,7 @@ const SuccessAuthPopup = (props) => {
                         makeAutoAuth();
                     }}
                 >
-                    ПОЕХАЛИ!
+                    OK...
                 </Link>
             </div>
         </div>
