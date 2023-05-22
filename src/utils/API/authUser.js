@@ -1,4 +1,6 @@
 import { BASE_URL } from "../../constants/routeConstants";
+import { getErrorAuthMassege } from "../../services/actions/getErrorAuthMassege";
+import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
 export const authorizeUser = (userEmail, userPassword, dispatch) => {
     const myHeaders = new Headers();
@@ -18,18 +20,23 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
         requestOptions
     )
         .then((response) => response.json())
-
-        .then((data) =>
-            window.localStorage.setItem("access_token", data.access_token)
-        )
-        .then(() => console.log(window.localStorage.getItem("access_token")))
-        .then(() =>
-            dispatch({
-                type: "AUTH_USER",
-                payload: window.localStorage.getItem("access_token")
-                    ? true
-                    : false,
-            })
-        )
+        .then((response) => {
+            if (response.access_token) {
+                window.localStorage.setItem(
+                    "access_token",
+                    response.access_token
+                );
+                console.log(window.localStorage.getItem("access_token"));
+                dispatch({
+                    type: "AUTH_USER",
+                    payload: window.localStorage.getItem("access_token")
+                        ? true
+                        : false,
+                });
+            } else {
+                dispatch(getErrorAuthMassege(response.error_description))
+                dispatch(makeSuccessRegistrationActive())
+            }
+        })
         .catch((error) => console.log("error", error));
 };
