@@ -16,42 +16,34 @@ import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
 
 const Auth = () => {
+
+    const location = useLocation();
+    const isLogin = location.pathname === LOGIN_ROUTE;
+
+    
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
 
-    const inputEmail = document.querySelector("#enteredEmail");
-    const inputPassword = document.querySelector("#enteredPassword");
-    let userInputData ={};
-
-    const getUserInputData = (event) => {
-        event.preventDefault();
-        return userInputData = {
-            userEmail: inputEmail.value,
-            userPassword: inputPassword.value,
-        }
-    }
-
     const dispatch = useDispatch();
 
-    const registrateUser = async function() {
-        getUserInputData();
-        console.log(userInputData)
-        await sendRegistrationToServer(userInputData.userEmail, userInputData.userPassword)
+    const registrateUser = (event) => {
+        event.preventDefault();
+        const inputEmail = document.querySelector("#enteredEmail").value;
+        const inputPassword = document.querySelector("#enteredPassword").value;
+        sendRegistrationToServer(inputEmail, inputPassword);
+        location.pathname = LOGIN_ROUTE;
         authForm.reset();
     };
 
     const sendAuthToServer = (event) => {
         event.preventDefault();
-        authorizeUser(
-            state.userState.userEmail,
-            state.userState.userPassword,
-            dispatch
-        );
+        const inputEmail = document.querySelector("#enteredEmail").value;
+        const inputPassword = document.querySelector("#enteredPassword").value;
+        authorizeUser(inputEmail, inputPassword, dispatch);
         authForm.reset();
     };
 
-    const location = useLocation();
-    const isLogin = location.pathname === LOGIN_ROUTE;
+
 
     const emailValidation = useInput("", { isEmpty: true, emailError: true });
     const passwordValidation = useInput("", { isEmpty: true, minLength: 5 });
