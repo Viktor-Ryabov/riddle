@@ -19,7 +19,6 @@ export const userReducer = (state = defaultState.userState, action) => {
                 isAuth: action.payload,
             };
         case "ERROR_AUTH_USER":
-            console.log(action.payload);
             return {
                 ...state,
                 userErrorAuth: action.payload,

@@ -27,7 +27,7 @@ export const defaultState = {
         userPassword: "",
         isAuth: false,
         userName: null,
-        userErrorAuth: {},
+        userErrorAuth: "",
     },
     fetchState: {
         fetchData: {},
