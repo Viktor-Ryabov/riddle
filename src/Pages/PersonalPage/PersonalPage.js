@@ -23,7 +23,7 @@ const PersonalPage = (props) => {
                     style={{ width: 200 }}
                     onClick={() => exitUser()}
                 >
-                    Exit
+                    <Link to={BASE_DOMAIN_URL}>Exit</Link>
                 </Button>
             </section>
         </>

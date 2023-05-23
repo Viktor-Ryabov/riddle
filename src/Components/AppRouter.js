@@ -27,7 +27,7 @@ const AppRouter = () => {
     if (userState) {
         return (
             <Routes>
-                <Route exact path="*" element={<Main />} />
+                <Route exact path="*" element={<Auth />} />
                 <Route exact path={MAIN_ROUTE} element={<Main />} />
                 <Route exact path={USER_ROUTE} element={<PersonalPage />} />
                 <Route exact path={QUESTION_ROUTE} element={<QuestionPage />} />
