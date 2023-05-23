@@ -22,20 +22,24 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
         .then((response) => response.json())
         .then((response) => {
             if (response.access_token) {
-                window.localStorage.setItem(
+                window.sessionStorage.setItem(
                     "access_token",
                     response.access_token
                 );
-                console.log(window.localStorage.getItem("access_token"));
+                console.log(window.sessionStorage.getItem("access_token"));
                 dispatch({
                     type: "AUTH_USER",
-                    payload: window.localStorage.getItem("access_token")
+                    payload: window.sessionStorage.getItem("access_token")
                         ? true
                         : false,
                 });
             } else {
-                dispatch(getErrorAuthMassege(response.error_description))
-                dispatch(makeSuccessRegistrationActive())
+                dispatch(getErrorAuthMassege(response.error_description));
+                dispatch(makeSuccessRegistrationActive());
+                dispatch({
+                    type: "AUTH_USER",
+                    payload: false,
+                });
             }
         })
         .catch((error) => console.log("error", error));

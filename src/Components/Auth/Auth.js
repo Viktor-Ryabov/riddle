@@ -34,9 +34,7 @@ const Auth = () => {
         const inputEmail = document.querySelector("#enteredEmail").value;
         const inputPassword = document.querySelector("#enteredPassword").value;
         sendRegistrationToServer(inputEmail, inputPassword);
-
         setUserState({inputEmail, inputPassword})
-
         location.pathname = LOGIN_ROUTE;
         authForm.reset();
     };

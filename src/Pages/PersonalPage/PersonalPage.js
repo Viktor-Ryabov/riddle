@@ -5,8 +5,8 @@ import { BASE_URL, LOGIN_ROUTE } from "../../constants/routeConstants";
 
 const PersonalPage = (props) => {
     const exitUser = () => {
-        window.localStorage.removeItem("access_token");
-        window.location.replace("http://questlocation.ru/");
+        window.sessionStorage.removeItem("access_token");
+        window.location.replace("http://localhost:3000/");
     };
 
     return (
