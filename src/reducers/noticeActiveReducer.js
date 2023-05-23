@@ -39,13 +39,14 @@ export const noticeActiveReducer = (
         case "ALL_MODAL_DISABLED":
             return {
                 ...state,
-                questionNotiseActive: false,
                 wronAnswerNoticeActive: false,
                 rightAnswerNotiseActive: false,
-                registrationPopupActive: false,
-                enteryPopupActive: false,
+                questionNotiseActive: false,
                 successRegistrationNotiseActive: false,
                 successAuthNotiseActive: false,
+                
+                registrationPopupActive: false,
+                enteryPopupActive: false,
             };
 
         default:

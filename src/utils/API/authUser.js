@@ -36,6 +36,7 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
             } else {
                 dispatch(getErrorAuthMassege(response.error_description));
                 dispatch(makeSuccessRegistrationActive());
+                console.log(`username=${userEmail}&password=${userPassword}`)
                 dispatch({
                     type: "AUTH_USER",
                     payload: false,
