@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants/routeConstants";
+import { BASE_URL_REQUEST } from "../../constants/routeConstants";
 import { getErrorAuthMassege } from "../../services/actions/getErrorAuthMassege";
 import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
@@ -16,7 +16,7 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
     };
 
     fetch(
-        `${BASE_URL}/oauth/token?grant_type=password&username=${userEmail}&password=${userPassword}`,
+        `${BASE_URL_REQUEST}/oauth/token?grant_type=password&username=${userEmail}&password=${userPassword}`,
         requestOptions
     )
         .then((response) => response.json())

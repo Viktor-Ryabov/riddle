@@ -1,12 +1,12 @@
 import { Button, Card, Container, Form } from "react-bootstrap";
 import Styles from "./PersonalPage.module.css";
 import { Link } from "react-router-dom";
-import { BASE_URL, LOGIN_ROUTE } from "../../constants/routeConstants";
+import { BASE_DOMAIN_URL } from "../../constants/routeConstants";
 
 const PersonalPage = (props) => {
     const exitUser = () => {
         window.sessionStorage.removeItem("access_token");
-        window.location.replace("http://localhost:3000/");
+        window.location.replace(BASE_DOMAIN_URL);
     };
 
     return (
