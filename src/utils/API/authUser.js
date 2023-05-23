@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constants/routeConstants";
+import { BASE_URL_REQUEST } from "../../constants/routeConstants";
 import { getErrorAuthMassege } from "../../services/actions/getErrorAuthMassege";
 import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
@@ -16,26 +16,31 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
     };
 
     fetch(
-        `${BASE_URL}/oauth/token?grant_type=password&username=${userEmail}&password=${userPassword}`,
+        `${BASE_URL_REQUEST}/oauth/token?grant_type=password&username=${userEmail}&password=${userPassword}`,
         requestOptions
     )
         .then((response) => response.json())
         .then((response) => {
             if (response.access_token) {
-                window.localStorage.setItem(
+                window.sessionStorage.setItem(
                     "access_token",
                     response.access_token
                 );
-                console.log(window.localStorage.getItem("access_token"));
+                console.log(window.sessionStorage.getItem("access_token"));
                 dispatch({
                     type: "AUTH_USER",
-                    payload: window.localStorage.getItem("access_token")
+                    payload: window.sessionStorage.getItem("access_token")
                         ? true
                         : false,
                 });
             } else {
-                dispatch(getErrorAuthMassege(response.error_description))
-                dispatch(makeSuccessRegistrationActive())
+                dispatch(getErrorAuthMassege(response.error_description));
+                dispatch(makeSuccessRegistrationActive());
+                console.log(`username=${userEmail}&password=${userPassword}`)
+                dispatch({
+                    type: "AUTH_USER",
+                    payload: false,
+                });
             }
         })
         .catch((error) => console.log("error", error));

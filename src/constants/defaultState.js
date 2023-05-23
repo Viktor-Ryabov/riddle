@@ -5,6 +5,7 @@ export const defaultState = {
         questionNotiseActive: false,
         successRegistrationNotiseActive: false,
         successAuthNotiseActive: false,
+        errorAuthNotiseActive: false,
         numberOfCurrentQuestion: 1,
     },
     navbarButtons: {

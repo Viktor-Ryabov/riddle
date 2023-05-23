@@ -1,12 +1,12 @@
 import { Button, Card, Container, Form } from "react-bootstrap";
 import Styles from "./PersonalPage.module.css";
 import { Link } from "react-router-dom";
-import { BASE_URL, LOGIN_ROUTE } from "../../constants/routeConstants";
+import { BASE_DOMAIN_URL } from "../../constants/routeConstants";
 
 const PersonalPage = (props) => {
     const exitUser = () => {
-        window.localStorage.removeItem("access_token");
-        window.location.replace("http://questlocation.ru/");
+        window.sessionStorage.removeItem("access_token");
+        window.location.replace(BASE_DOMAIN_URL);
     };
 
     return (
@@ -23,7 +23,7 @@ const PersonalPage = (props) => {
                     style={{ width: 200 }}
                     onClick={() => exitUser()}
                 >
-                    Exit
+                    <Link to={BASE_DOMAIN_URL}>Exit</Link>
                 </Button>
             </section>
         </>

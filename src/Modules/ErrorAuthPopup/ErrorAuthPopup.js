@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { setAllModalDisabled } from "../../services/actions/setAllModalDisabled";
 
-const SuccessAuthPopup = (props) => {
+const ErrorAuthPopup = (props) => {
     const state = useSelector(state => state)
     const dispatch = useDispatch();
     const makeAutoAuth = () => {
-        props.makeAuth();
         dispatch(setAllModalDisabled());
     }
     return (
@@ -31,4 +30,4 @@ const SuccessAuthPopup = (props) => {
     );
 };
 
-export default SuccessAuthPopup;
+export default ErrorAuthPopup;

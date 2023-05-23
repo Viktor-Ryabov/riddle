@@ -12,17 +12,17 @@ import { useDispatch, useSelector } from "react-redux";
 import useInput from "../../utils/useInput";
 import { withModal } from "../../hoc/withModal";
 import SuccessAuthPopup from "../../Modules/SuccessAuthPopup/SuccessAuthPopup";
+import ErrorAuthPopup from "../../Modules/ErrorAuthPopup/ErrorAuthPopup";
 
 const WithModalSuccessAuth = withModal(SuccessAuthPopup);
+const WithModalErrorAuth = withModal(ErrorAuthPopup);
 
 const Auth = () => {
-
     const [userState, setUserState] = useState({});
     useEffect(() => {}, [setUserState]);
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
-
 
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
@@ -34,9 +34,7 @@ const Auth = () => {
         const inputEmail = document.querySelector("#enteredEmail").value;
         const inputPassword = document.querySelector("#enteredPassword").value;
         sendRegistrationToServer(inputEmail, inputPassword);
-
-        setUserState({inputEmail, inputPassword})
-
+        setUserState({ inputEmail, inputPassword });
         location.pathname = LOGIN_ROUTE;
         authForm.reset();
     };
@@ -58,11 +56,14 @@ const Auth = () => {
                 active={state.noticeActive.successRegistrationNotiseActive}
                 makeAuth={() =>
                     authorizeUser(
-                        state.userState.userEmail,
-                        state.userState.userPassword,
+                        userState.inputEmail,
+                        userState.inputPassword,
                         dispatch
                     )
                 }
+            />
+            <WithModalErrorAuth
+                active={state.noticeActive.successRegistrationNotiseActive}
                 text={state.userState.userErrorAuth}
             />
             <Container
