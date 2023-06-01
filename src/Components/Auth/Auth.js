@@ -5,6 +5,7 @@ import { useLocation, NavLink } from "react-router-dom";
 import {
     LOGIN_ROUTE,
     REGISTRATION_ROUTE,
+    USER_ROUTE,
 } from "../../constants/routeConstants";
 import { sendRegistrationToServer } from "../../utils/API/registration";
 import { authorizeUser } from "../../utils/API/authUser";
@@ -19,23 +20,48 @@ const WithModalErrorAuth = withModal(ErrorAuthPopup);
 
 const Auth = () => {
     const [userState, setUserState] = useState({});
-    useEffect(() => {}, [setUserState]);
+    useEffect(() => {
+        console.log(`userState`, userState);
+    }, [userState]);
 
     const location = useLocation();
     const isLogin = location.pathname === LOGIN_ROUTE;
 
     const authForm = document.querySelector("#form");
     const state = useSelector((state) => state);
+    useEffect(() => {
+        console.log(`userAuth`, state.userState.isAuth);
+    }, [state.userState.isAuth]);
 
     const dispatch = useDispatch();
 
-    const registrateUser = (event) => {
-        event.preventDefault();
+    const getUserData = () => {
         const inputEmail = document.querySelector("#enteredEmail").value;
         const inputPassword = document.querySelector("#enteredPassword").value;
-        sendRegistrationToServer(inputEmail, inputPassword);
-        setUserState({ inputEmail, inputPassword });
-        location.pathname = LOGIN_ROUTE;
+        const userInputData = {
+            inputEmail: inputEmail,
+            inputPassword: inputPassword,
+        };
+        setUserState(userInputData);
+    };
+
+    const registrateUser = (event) => {
+        event.preventDefault();
+        // getUserData();
+        // sendRegistrationToServer(
+        //     userState.inputEmail,
+        //     userState.inputPassword,
+        //     dispatch,
+        //     location
+        // );
+        const inputEmail = document.querySelector("#enteredEmail").value;
+        const inputPassword = document.querySelector("#enteredPassword").value;
+        sendRegistrationToServer(
+            inputEmail,
+            inputPassword,
+            dispatch,
+            location
+        );
         authForm.reset();
     };
 
@@ -43,7 +69,7 @@ const Auth = () => {
         event.preventDefault();
         const inputEmail = document.querySelector("#enteredEmail").value;
         const inputPassword = document.querySelector("#enteredPassword").value;
-        authorizeUser(inputEmail, inputPassword, dispatch);
+        authorizeUser(inputEmail, inputPassword, dispatch, location);
         authForm.reset();
     };
 

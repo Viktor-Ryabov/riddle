@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "./SuccessAuthPopup.module.css";
+import Styles from "./ErrorAuthPopup.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { setAllModalDisabled } from "../../services/actions/setAllModalDisabled";

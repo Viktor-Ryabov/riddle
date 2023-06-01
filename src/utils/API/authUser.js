@@ -1,8 +1,9 @@
-import { BASE_URL_REQUEST } from "../../constants/routeConstants";
+import { BASE_URL_REQUEST, MAIN_ROUTE, USER_ROUTE } from "../../constants/routeConstants";
 import { getErrorAuthMassege } from "../../services/actions/getErrorAuthMassege";
 import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 
-export const authorizeUser = (userEmail, userPassword, dispatch) => {
+export const authorizeUser = (userEmail, userPassword, dispatch, location) => {
+    console.log(`username=${userEmail}&password=${userPassword}`);
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
     myHeaders.append("Authorization", "Basic Y2xpZW50OnNlY3JldA==");
@@ -22,21 +23,22 @@ export const authorizeUser = (userEmail, userPassword, dispatch) => {
         .then((response) => response.json())
         .then((response) => {
             if (response.access_token) {
-                window.sessionStorage.setItem(
+                window.localStorage.setItem(
                     "access_token",
                     response.access_token
                 );
-                console.log(window.sessionStorage.getItem("access_token"));
+                console.log(window.localStorage.getItem("access_token"));
                 dispatch({
                     type: "AUTH_USER",
-                    payload: window.sessionStorage.getItem("access_token")
+                    payload: window.localStorage.getItem("access_token")
                         ? true
                         : false,
                 });
+                location.pathname = MAIN_ROUTE;
             } else {
                 dispatch(getErrorAuthMassege(response.error_description));
                 dispatch(makeSuccessRegistrationActive());
-                console.log(`username=${userEmail}&password=${userPassword}`)
+                console.log(`username=${userEmail}&password=${userPassword}`);
                 dispatch({
                     type: "AUTH_USER",
                     payload: false,
