@@ -26,6 +26,7 @@ export const sendRegistrationToServer = (
         .then((response) => {
             if (response.message) {
                 console.log(response.message)
+                alert(document.cookie)
                 authorizeUser(userEmail, userPassword, dispatch, location);
             } else {
                 console.log(response)

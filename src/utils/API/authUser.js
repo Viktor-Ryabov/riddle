@@ -1,4 +1,8 @@
-import { BASE_URL_REQUEST, MAIN_ROUTE, USER_ROUTE } from "../../constants/routeConstants";
+import {
+    BASE_URL_REQUEST,
+    MAIN_ROUTE,
+    USER_ROUTE,
+} from "../../constants/routeConstants";
 import { getErrorAuthMassege } from "../../services/actions/getErrorAuthMassege";
 import { makeSuccessRegistrationActive } from "../../services/actions/makeSuccessRegistrationActive";
 

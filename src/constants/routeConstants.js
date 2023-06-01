@@ -12,4 +12,5 @@ export const REGISTRATION_URL = 'http://1470497-cz40003.tw1.ru:8080/rest/service
 export const AUTH_URL = 'http://1470497-cz40003.tw1.ru:8080/oauth/token'
 // export const BASE_DOMAIN_URL = 'http://localhost:3000/'
 export const BASE_DOMAIN_URL = 'http://questlocation.ru/'
+export const ANSWER_REQUEST_URL = 'http://1470497-cz40003.tw1.ru:8080/rest/services/UserTaskServiceBean/isAnswerCorrect'
 
